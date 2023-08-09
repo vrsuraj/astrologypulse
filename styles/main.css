@@ -1,0 +1,46 @@
+  h1 {
+      line-height: 1.2;
+  }
+  
+    label {
+      color: #fff;
+    }
+  
+    .form-control {
+      background-color: transparent;
+      /*border: 2px solid #a3a3a3;*/
+      border-radius: 7px;
+      color: currentColor;
+      padding: 10px 10px;
+      width: 100%;
+    }
+  
+    .form-control::placeholder {
+      color: #a1a1aa;
+    }
+  
+    .form-control:focus {
+      outline: none;
+    }
+  
+    .rbt-menu {
+      z-index: 10;
+    }
+  
+    input::placeholder {
+      color: #a1a1aa;
+    }
+  
+    .input2 {
+      outline: none;
+      width: 100%;
+      padding: 10px 5px;
+      background: transparent;
+    }
+  
+    .inputbox {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      width: 100%;
+    }

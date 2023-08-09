@@ -1,0 +1,6 @@
+{
+    "HEAD_START":["(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TNF5PCV');"],"HEAD_END":[],"BODY_START":[],"BODY_END":[],
+    "X_ASTROPAGES_KEY":"d052e1d153480e764b3152656d97ba49fc953318",
+    "ASTROLOGYAPI_USERID":"620457",
+    "ASTROLOGYAPI_API_KEY":"2ba7a54e42f39fa6a05602d962fc9edb"
+}
