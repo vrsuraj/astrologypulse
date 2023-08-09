@@ -65,19 +65,19 @@ export const PlanetColor = {
 };
 
 export const SignColor = {
-  taurus: "text-orange-400",
-  capricorn: "text-sky-400 ",
-  pisces: "text-pink-400",
-  venus: "text-yellow-400 ",
-  sagittarius: "text-green-400",
-  aquarius: "text-indigo-400",
-  gemini: "text-amber-400 ",
-  virgo: "text-orange-400 ",
-  libra: "text-pink-400",
-  cancer: "text-teal-400",
-  leo: "text-cyan-400 ",
-  scorpio: "text-fuchsia-400 ",
-  aries: "text-red-400",
+  taurus: "#fb923c",
+  capricorn: "#38bdf8",
+  pisces: "#f472b6",
+  venus: "#facc15 ",
+  sagittarius: "#4ade80",
+  aquarius: "#818cf8",
+  gemini: "#fbbf24 ",
+  virgo: "#fb923c ",
+  libra: "#f472b6",
+  cancer: "#2dd4bf",
+  leo: "#22d3ee ",
+  scorpio: "#e879f9 ",
+  aries: "#fb7185",
 };
 
 export const SignBgColor = {

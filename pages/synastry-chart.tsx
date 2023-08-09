@@ -1,20 +1,23 @@
 import React from "react";
-import CallToActionSectionStyle1 from "../components/sections/callToAction.tsx/callToActionStyle1";
-export default function Test() {
+import SynastryCalculator from "../src/component/forms/synastryCalculator";
+type Props = {};
+
+export default function SynastryChart({}: Props) {
   return (
     <div>
-      <CallToActionSectionStyle1
-        data={pageSection?.page_skeleton?.sections[0]}
+      <SynastryCalculator
+        pageData={pageSection?.page_skeleton?.sections[0]}
+        withoutText={undefined}
       />
     </div>
   );
 }
 
 const pageSection = {
-  page_name: "yes no tarot",
-  page_route: "yes-no-tarot",
+  page_name: "synastry chart",
+  page_route: "synastry-chart",
   page_skeleton: {
-    page_name: "yes no tarot",
+    page_name: "synastry-chart",
     page_id: "birth_chart",
     seo: {
       meta_title: "",
@@ -23,124 +26,59 @@ const pageSection = {
     },
     sections: [
       {
-        type: "CTA",
-        id: "cta",
-        label: "CTA Section",
+        type: "SYNASTRY_CHART",
+        id: "solar-return-chart",
+        label: "Solar Return Chart",
         config: {
           style: {
-            type: "color",
-            value: "red",
+            type: "default",
+            value: "",
           },
         },
         variants: {
-          Color: {
+          default: {
             label: "Default",
-            value: "Color",
-            allowedComponents: ["CONTENT", "HEADLINE", "BUTTON"],
-          },
-          Image: {
-            label: "CTA Section With Background Image",
-            value: "Image",
-            allowedComponents: ["CONTENT", "HEADLINE", "BUTTON"],
-          },
-          CTAStyleThree: {
-            label: "CTA Section With Sub Text",
-            value: "CTAStyleThree",
-            allowedComponents: ["SUB_TEXT", "CONTENT", "HEADLINE", "BUTTON"],
-          },
-          CTAStyleFour: {
-            label: "CTA Section With Two Button",
-            value: "CTAStyleFour",
+            value: "default",
             allowedComponents: [
-              "SUB_TEXT",
               "HEADLINE",
-              "BUTTON",
-              "EXTRA_BUTTON",
+              "CONTENT",
+              "SYNASTRY_CHART_PRIMARY_FORM",
+              "SYNASTRY_CHART_SECONDARY_FORM",
+              "SYNASTRY_CHART_FORM_RESPONSE",
             ],
           },
-          CTAStyleFive: {
-            label: "CTA Section With Image",
-            value: "CTAStyleFive",
-            allowedComponents: ["CONTENT", "HEADLINE", "BUTTON", "IMAGE"],
-          },
-          CTAStyleSix: {
-            label: "CTA Section With All Components",
-            value: "CTAStyleSix",
+          SynastryChartStyleTwo: {
+            label: "Synastry Chart With Image",
+            value: "SynastryChartStyleTwo",
             allowedComponents: [
-              "CONTENT",
               "HEADLINE",
-              "BUTTON",
+              "CONTENT",
+              "SYNASTRY_CHART_PRIMARY_FORM",
+              "SYNASTRY_CHART_SECONDARY_FORM",
+              "SYNASTRY_CHART_FORM_RESPONSE",
               "IMAGE",
-              "SUB_TEXT",
+            ],
+          },
+          SynastryChartWithoutContent: {
+            label: "Synastry Chart Without Content",
+            value: "SynastryChartWithoutContent",
+            allowedComponents: [
+              "SYNASTRY_CHART_PRIMARY_FORM",
+              "SYNASTRY_CHART_SECONDARY_FORM",
+              "SYNASTRY_CHART_FORM_RESPONSE",
             ],
           },
         },
-        currentVariant: "CTAStyleFour",
+        currentVariant: "default",
         components: [
           {
             id: 1,
-            type: "CONTENT",
-            label: "Content",
-            props: {
-              content: {
-                input_type: "RICH_TEXTAREA",
-                value:
-                  '<p>helo by<a href="https://google.com">ebybey</a>&nbsp;sjdhfhdsf<br><span style="background-color: rgb(163, 102, 255);color: rgb(241, 241, 241)">sjkdnfdshjf</span></p>',
-              },
-              weight: {
-                input_type: "SELECT",
-                value: "light",
-                options: [
-                  {
-                    label: "thin",
-                    value: "thin",
-                  },
-                  {
-                    label: "extraLight",
-                    value: "extraLight",
-                  },
-                  {
-                    label: "light",
-                    value: "light",
-                  },
-                  {
-                    label: "normal",
-                    value: "normal",
-                  },
-                  {
-                    label: "medium",
-                    value: "medium",
-                  },
-                  {
-                    label: "semiBold",
-                    value: "semiBold",
-                  },
-                  {
-                    label: "bold",
-                    value: "bold",
-                  },
-                  {
-                    label: "extraBold",
-                    value: "extraBold",
-                  },
-                  {
-                    label: "black",
-                    value: "black",
-                  },
-                ],
-                hidden: false,
-              },
-            },
-          },
-          {
-            id: 2,
             type: "HEADLINE",
             label: "Headline",
             props: {
               content: {
                 input_type: "RICH_TEXTAREA",
-                value: "<p>dfjhdbfjhb</p>",
-                hidden: false,
+                value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
               },
               weight: {
                 input_type: "SELECT",
@@ -220,19 +158,7 @@ const pageSection = {
                 ],
                 hidden: false,
               },
-            },
-          },
-          {
-            id: 3,
-            type: "BUTTON",
-            label: "CTA Button",
-            props: {
-              button_text: {
-                input_type: "TEXT_INPUT",
-                value: "Hero Alom",
-                hidden: false,
-              },
-              shadow_size: {
+              size: {
                 input_type: "SELECT",
                 value: "base",
                 options: [
@@ -263,157 +189,186 @@ const pageSection = {
                 ],
                 hidden: false,
               },
-              shadow_color: {
-                input_type: "COLOR_PICKER",
-                value: "#d63031",
+            },
+          },
+          {
+            id: 2,
+            type: "CONTENT",
+            label: "Content",
+            props: {
+              content: {
+                input_type: "RICH_TEXTAREA",
+                value:
+                  "<p>Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today</p>",
+              },
+              weight: {
+                input_type: "SELECT",
+                value: "light",
+                options: [
+                  {
+                    label: "thin",
+                    value: "thin",
+                  },
+                  {
+                    label: "extraLight",
+                    value: "extraLight",
+                  },
+                  {
+                    label: "light",
+                    value: "light",
+                  },
+                  {
+                    label: "normal",
+                    value: "normal",
+                  },
+                  {
+                    label: "medium",
+                    value: "medium",
+                  },
+                  {
+                    label: "semiBold",
+                    value: "semiBold",
+                  },
+                  {
+                    label: "bold",
+                    value: "bold",
+                  },
+                  {
+                    label: "extraBold",
+                    value: "extraBold",
+                  },
+                  {
+                    label: "black",
+                    value: "black",
+                  },
+                ],
                 hidden: false,
               },
               size: {
                 input_type: "SELECT",
-                value: "lg",
+                value: "base",
                 options: [
                   {
-                    label: "Extra small",
-                    value: "xs",
+                    label: "none",
+                    value: "none",
                   },
                   {
-                    label: "Small",
+                    label: "sm",
                     value: "sm",
                   },
                   {
-                    label: "Medium",
+                    label: "base",
+                    value: "base",
+                  },
+                  {
+                    label: "md",
                     value: "md",
                   },
                   {
-                    label: "Large",
+                    label: "lg",
                     value: "lg",
                   },
-                ],
-                hidden: false,
-              },
-
-              target: {
-                input_type: "SELECT",
-                value: "current",
-                options: [
                   {
-                    label: "Current Tab",
-                    value: "self",
-                  },
-                  {
-                    label: "New Tab",
-                    value: "self",
+                    label: "xl",
+                    value: "xl",
                   },
                 ],
                 hidden: false,
               },
-
-              action: {
-                input_type: "ACTION_BUTTON",
-                value: "transit-chart",
-                hidden: false,
+            },
+          },
+          {
+            id: 3,
+            type: "SYNASTRY_CHART_PRIMARY_FORM",
+            label: "Synastry Chart Primary Form",
+            props: {
+              email_status: {
+                input_type: "TOGGLE_BUTTON",
+                value: true,
+              },
+              label_status: {
+                input_type: "TOGGLE_BUTTON",
+                value: true,
+              },
+              button_text: {
+                input_type: "TEXT_INPUT",
+                value: "Calculate Your Birth Chart",
+              },
+              date_label: {
+                input_type: "TEXT_INPUT",
+                value: "Select Your Birth Date",
+              },
+              name_label: {
+                input_type: "TEXT_INPUT",
+                value: "Enter Your Full Name",
+              },
+              time_label: {
+                input_type: "TEXT_INPUT",
+                value: "Select Your Birth Time",
+              },
+              place_label: {
+                input_type: "TEXT_INPUT",
+                value: "Select Your Birth Place",
+              },
+              email_label: {
+                input_type: "TEXT_INPUT",
+                value: "Enter Your Email",
               },
             },
           },
           {
             id: 4,
-            type: "EXTRA_BUTTON",
-            label: "Second Button",
+            type: "SYNASTRY_CHART_SECONDARY_FORM",
+            label: "Synastry Chart Secondary Form",
             props: {
+              email_status: {
+                input_type: "TOGGLE_BUTTON",
+                value: false,
+              },
+              label_status: {
+                input_type: "TOGGLE_BUTTON",
+                value: true,
+              },
               button_text: {
                 input_type: "TEXT_INPUT",
-                value: "Hero Alom",
-                hidden: false,
+                value: "Calculate Your Birth Chart",
               },
-
-              shadow_size: {
-                input_type: "SELECT",
-                value: "base",
-                options: [
-                  {
-                    label: "none",
-                    value: "none",
-                  },
-                  {
-                    label: "sm",
-                    value: "sm",
-                  },
-                  {
-                    label: "base",
-                    value: "base",
-                  },
-                  {
-                    label: "md",
-                    value: "md",
-                  },
-                  {
-                    label: "lg",
-                    value: "lg",
-                  },
-                  {
-                    label: "xl",
-                    value: "xl",
-                  },
-                ],
-                hidden: false,
+              date_label: {
+                input_type: "TEXT_INPUT",
+                value: "Select Your Birth Date",
               },
-
-              size: {
-                input_type: "SELECT",
-                value: "lg",
-                options: [
-                  {
-                    label: "Extra small",
-                    value: "xs",
-                  },
-                  {
-                    label: "Small",
-                    value: "sm",
-                  },
-                  {
-                    label: "Medium",
-                    value: "md",
-                  },
-                  {
-                    label: "Large",
-                    value: "lg",
-                  },
-                ],
-                hidden: false,
+              name_label: {
+                input_type: "TEXT_INPUT",
+                value: "Enter Your Full Name",
               },
-
-              target: {
-                input_type: "SELECT",
-                value: "current",
-                options: [
-                  {
-                    label: "Current Tab",
-                    value: "self",
-                  },
-                  {
-                    label: "New Tab",
-                    value: "self",
-                  },
-                ],
-                hidden: false,
+              time_label: {
+                input_type: "TEXT_INPUT",
+                value: "Select Your Birth Time",
               },
-
+              place_label: {
+                input_type: "TEXT_INPUT",
+                value: "Select Your Birth Place",
+              },
+              email_label: {
+                input_type: "TEXT_INPUT",
+                value: "Enter Your Email",
+              },
               action: {
-                input_type: "ACTION_BUTTON",
-                value: "transit-chart",
+                input_type: "TEXT_INPUT",
+                value: "/synastry-chart-response", // or external link
                 hidden: false,
               },
             },
           },
           {
-            id: 5,
+            id: 6,
             type: "IMAGE",
             label: "Image",
             props: {
               src: {
                 input_type: "FILE_UPLOAD",
                 value:
-                  "https://astropages.s3.ap-south-1.amazonaws.com/test_db/Screenshot 2023-07-17 at 11.23.11 PM.png",
+                  "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
                 hidden: false,
               },
               alt: {
@@ -542,66 +497,11 @@ const pageSection = {
               },
             },
           },
-          {
-            id: 6,
-            type: "SUB_TEXT",
-            label: "Sub Text",
-            props: {
-              content: {
-                input_type: "RICH_TEXTAREA",
-                value:
-                  '<p>helo by<a href="https://google.com">ebybey</a>&nbsp;sjdhfhdsf<br><span style="background-color: rgb(163, 102, 255);color: rgb(241, 241, 241)">sjkdnfdshjf</span></p>',
-              },
-              weight: {
-                input_type: "SELECT",
-                value: "light",
-                options: [
-                  {
-                    label: "thin",
-                    value: "thin",
-                  },
-                  {
-                    label: "extraLight",
-                    value: "extraLight",
-                  },
-                  {
-                    label: "light",
-                    value: "light",
-                  },
-                  {
-                    label: "normal",
-                    value: "normal",
-                  },
-                  {
-                    label: "medium",
-                    value: "medium",
-                  },
-                  {
-                    label: "semiBold",
-                    value: "semiBold",
-                  },
-                  {
-                    label: "bold",
-                    value: "bold",
-                  },
-                  {
-                    label: "extraBold",
-                    value: "extraBold",
-                  },
-                  {
-                    label: "black",
-                    value: "black",
-                  },
-                ],
-                hidden: false,
-              },
-            },
-          },
         ],
       },
     ],
   },
-  page_id: "yes_no_tarot",
+  page_id: "synastry_chart",
   page_type: null,
   page_visibility: true,
 };

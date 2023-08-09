@@ -2,13 +2,14 @@ import {
   ProfileDetailCard2,
   SynastryAspectCard,
   SynastryOneFeture,
-} from "../reports/utils";
-import { DynamicText, Paragraph } from "../utils/text";
-import { Loader2 } from "../utils/loader";
+} from "../../reports/utils";
+import { FetchApi } from "../../../../utils/fetchAPI";
+import { Loader2 } from "../../../../utils/loader";
 import React, { useEffect, useState } from "react";
-import { FetchApi } from "../utils/fetchapi";
+import Text from "../../text";
+import Paragraph from "../../paragraph";
 
-export default function SynastryResponse({ handleForm, userdata, jsonData }) {
+export default function SynastryResponse({ handleForm, userdata, pageData }) {
   const [detail, setdetail] = useState({});
   const [svg, setsvg] = useState();
 
@@ -76,18 +77,20 @@ export default function SynastryResponse({ handleForm, userdata, jsonData }) {
     }
   };
   return (
-    <div className="px-5 md:py-14 py-14">
+    <div className="px-5 py-14">
       <div className="flex flex-col gap-10">
-        <div className="max-w-3xl mx-auto  text-center flex flex-col gap-5">
-          <DynamicText value={jsonData?.content?.title}>
-            <h1 className="md:text-5xl text-4xl text-center text-highlight font-bold">
-              {jsonData?.content?.title}
-            </h1>
-          </DynamicText>
-          <Paragraph
-            style="text-zinc-300 md:text-lg text-center"
-            text={jsonData?.content?.description}
-          />
+        <div className="max-w-3xl text-center mx-auto flex flex-col gap-5">
+          <Text
+            extra="!text-highlight !dark:text-hightlight"
+            size={"4xl"}
+            variant="h1"
+            weight={"semibold"}
+          >
+            {pageData?.props?.response_headline?.value}
+          </Text>
+          <Paragraph size={"lg"}>
+            {pageData?.props?.response_content_text?.value}
+          </Paragraph>
         </div>
 
         {svg !== null ? (
@@ -102,7 +105,7 @@ export default function SynastryResponse({ handleForm, userdata, jsonData }) {
           <Loader2 />
         )}
       </div>
-      <div className="pb-14 pt-10 mt-14 max-w-4xl mx-auto w-full border-t border-third/50">
+      <div className="pb-14 pt-10 mt-14 max-w-4xl mx-auto w-full border-t border-secondary/50">
         <ProfileDetailCard2
           userDetail={userdata?.male}
           handleForm={handleForm}
@@ -113,10 +116,10 @@ export default function SynastryResponse({ handleForm, userdata, jsonData }) {
       {Object.keys(detail).length > 0 ? (
         <div>
           <div className="max-w-4xl mx-auto pb-20">
-            <h2 className="font-semibold md:text-4xl text-3xl mb-5 border-b pb-3 text-white border-third/50">
+            <h2 className="font-semibold md:text-4xl text-3xl mb-5 border-b pb-3 text-white border-secondary/50">
               Synastry Positions
             </h2>
-            <div className="border border-b-0 border-third/50">
+            <div className="border border-b-0 border-secondary/50">
               {detail["first"].map((item, i) => (
                 <SynastryOneFeture
                   color={i}

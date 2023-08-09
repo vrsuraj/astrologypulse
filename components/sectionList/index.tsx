@@ -13,6 +13,16 @@ const sectionsMap: any = {
         import("@/components/sections/calculators/grid-icon-card-calculator")
     ),
   },
+  cta: {
+    color: dynamic(
+      () =>
+        import("../../components/sections/callToAction.tsx/callToActionStyle1")
+    ),
+    CTAStyleFour: dynamic(
+      () =>
+        import("../../components/sections/callToAction.tsx/callToActionStyle1")
+    ),
+  },
   "split-section": {
     ContentImageRight: dynamic(
       () => import("@/components/sections/image-text")
@@ -31,6 +41,20 @@ const sectionsMap: any = {
       () => import("@/components/sections/image-text")
     ),
   },
+  "birth-chart": dynamic(
+    () => import("@/components/sections/forms/birthChart")
+  ),
+  synastry_chart: dynamic(
+    () => import("../../src/component/forms/synastryCalculator")
+  ),
+  zodiac_compatibility: dynamic(
+    () => import("@/src/component/zodiac-compatibility")
+  ),
+  yes_no_tarot: dynamic(() => import("@/src/component/tarot/yes-no-tarot")),
+  "9_spread_tarot": dynamic(() => import("@/src/component/tarot/9SpreadTarot")),
+  tarot_prediction: dynamic(
+    () => import("@/src/component/tarot/tarot-prediction")
+  ),
 };
 
 export default function SectionList({ data }: { data: IFetchData }) {

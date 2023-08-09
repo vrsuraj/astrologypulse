@@ -16,6 +16,7 @@ export type ButtonColor =
   | 'dark'
   | 'black' 
   | 'default' ;
+
 export type ButtonAnimation = 'none' | 'pulse' | 'bounce';
 export type ButtonShape = 'pill' | 'rounded' | 'square';
 export type ButtonShadowColor =
@@ -47,7 +48,7 @@ export interface ButtonProps  {
   animation?: ButtonAnimation;
   target?:ButtonTarget;
   extra?:string,
-  color?:ButtonColor;
+  color?:ButtonColor | any;
   custom_class?:string | undefined;
   disabled?: boolean;
   icon?: boolean;

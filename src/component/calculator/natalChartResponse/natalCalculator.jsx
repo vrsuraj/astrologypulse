@@ -1,4 +1,3 @@
-import { ProfileDetailCard2 } from "../profileDetailCard";
 import {
   elements,
   hemisphere1,
@@ -17,6 +16,7 @@ import {
   Natal_house_cusp_report,
   PlanetHouse,
   Planet_sign_report,
+  ProfileDetailCard2,
 } from "../../reports/utils";
 
 import { TabUI } from "../../tab/tabUi1";

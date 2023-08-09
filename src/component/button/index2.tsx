@@ -1,5 +1,5 @@
 "use client";
-import React, { JSXElementConstructor, ReactElement, useMemo } from "react";
+import React, { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 import { ButtonProps, ButtonTargetEnum } from "./button.type";
 import { buttonStyles } from "./example.button.style";
@@ -74,9 +74,33 @@ export default function Button(props: Props) {
   const target_link = ButtonTargetEnum[target!] || ButtonTargetEnum["self"];
   // const displayIcon = icon || false;
 
+  const colorCheck = [
+    "white",
+    "blue",
+    "red",
+    "green",
+    "yellow",
+    "purple",
+    "gray",
+    "dark",
+    "black",
+    "default",
+  ];
+
+  function styleButton(colorValue: string) {
+    let style: any = {};
+    if (colorCheck.includes(colorValue)) {
+      return {};
+    } else {
+      style["background"] = colorValue;
+    }
+    return style;
+  }
+
   return (
     <Link href={link_url} legacyBehavior>
       <a
+        style={styleButton(color)}
         onClick={() => (props?.callback ? props?.callback() : "")}
         target={target_link}
         className={`max-w-[250px] w-full px-5 md:px-10 py-3 ${classes} capitalize ${extra} `}

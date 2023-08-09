@@ -185,7 +185,7 @@ l-7 52 57 0 56 0 0 -49z m146 -3 c-4 -29 -8 -53 -9 -54 -1 0 -23 1 -49 4 l-48
       ) : (
         <button
           onClick={handleForm}
-          className="text-sm flex flex-row-reverse gap-2 items-center px-3 md:px-5 py-2 border border-current  absolute text-third  right-3 md:right-5 top-0 md:top-5"
+          className="text-sm flex flex-row-reverse gap-2 items-center px-3  py-1 border border-current  absolute text-third  right-3 md:right-5 top-0 md:top-5"
         >
           <span>EDIT</span>
           <svg viewBox="0 0 48 48" fill="currentColor" className="w-4 h-4">
@@ -512,7 +512,7 @@ export function SynastryAspectCard({ response, title, desc }) {
         <h2 className="font-semibold md:text-4xl text-3xl mb-5 border-b pb-3 text-white border-secondary/50">
           {title}
         </h2>
-        <p className=" text-primary p-5 bg-secondary text-sm sm:text-base leading-7 rounded-md ">
+        <p className=" text-primary p-5 bg-third text-sm sm:text-base leading-7 rounded-md ">
           {desc}
         </p>
       </div>
@@ -918,13 +918,17 @@ export const SynastryOneFeture = (props) => {
             name={props.data.name}
           />
           Your {props.data.name} is in{" "}
-          <b className={` py-[2px]  text-secondary border-b border-current `}>
+          <b
+            style={{ color: PlanetColor[props.data.name.toLowerCase()] }}
+            className={`py-[2px]  border-b border-current `}
+          >
             {getDMS(props.data.norm_degree)} {props.data.sign}
           </b>
         </div>
         <div className="flex gap-2 items-center flex-wrap">
           and your partner's {props.data2.name} is in{" "}
           <b
+            style={{ color: PlanetColor[props.data.name.toLowerCase()] }}
             className={` font-cera_medium py-[2px]  text-secondary border-b border-current`}
           >
             {getDMS(props.data2.norm_degree)} {props.data2.sign}

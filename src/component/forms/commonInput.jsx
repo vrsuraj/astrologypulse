@@ -120,7 +120,7 @@ export default function CommonForm(props) {
 
   return (
     <div
-      style={{ background: props.bgColor ? props.bgColor : "#1E1F24" }}
+      // style={{ background: props.bgColor ? props.bgColor : "#1E1F24" }}
       className={`flex bg-primary pb-4 flex-col w-full`}
     >
       <form
@@ -129,9 +129,6 @@ export default function CommonForm(props) {
       >
         {props.email_status && (
           <div className="flex flex-col gap-0 inputbox">
-            {/* {props.label && (
-              <label className={`text-left`}>{props.formKeys.email}</label>
-            )} */}
             <input
               className={`${getInputStyle(props.type, props.style)} `}
               type="email"

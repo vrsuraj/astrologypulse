@@ -22,23 +22,6 @@ export function getLayout(variant: string) {
   }
 }
 
-interface ComponentObject {
-  id: number;
-  type: string;
-  label: string;
-  props: {
-    [key: string]: {
-      input_type: string;
-      value: any;
-      hidden: boolean;
-      options?: Array<{
-        label: string;
-        value: string | boolean;
-      }>;
-    };
-  };
-}
-
 export default function BirthChartSection({ data }: { data: any }) {
   const allowedComponents =
     data?.variants[data?.currentVariant].allowedComponents;
