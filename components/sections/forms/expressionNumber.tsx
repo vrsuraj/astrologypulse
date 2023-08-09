@@ -8,14 +8,15 @@ import useForm from "../../../context/useFormValue";
 import { findComponent } from "@/utils/arrayFunc";
 import { FetchApi } from "@/utils/fetchAPI";
 import { Loader2 } from "@/utils/loader";
+import { MoreCards } from "../../cards/calculatorCard";
 export function getLayout(variant: string) {
   switch (variant) {
     case "default":
-    case "NumerologyWithoutContent":
-    case "NumerologyStyleTwo":
+    case "ExpressionNumberCalculatorWithoutContent":
+    case "ExpressionNumberCalculatorStyleTwo":
       return " md:flex-col justify-center text-center";
 
-    case "NumerologyStyleThree":
+    case "ExpressionNumberCalculatorStyleThree":
       return "md:flex-row";
   }
 }
@@ -45,18 +46,21 @@ export default function NumerologySection({ data }: { data: any }) {
     defaultFormData["adduserdata"]({ numerology: data });
   };
 
+  const headlineComponent = findComponent("HEADLINE", components);
+  const contentComponent = findComponent("CONTENT", components);
+  const expressionNumberComponent = findComponent(
+    "EXPRESSION_NUMBER_CALCULATOR_FORM",
+    components
+  );
+
   const fetchdata = async (e: any) => {
     const ApiCall = await FetchApi({
-      apiName: "numerological_numbers",
+      apiName: "expression_number",
       userData: e,
     });
     setResponse(ApiCall ? ApiCall : null);
     // setLoader(false);
   };
-
-  const headlineComponent = findComponent("HEADLINE", components);
-  const contentComponent = findComponent("CONTENT", components);
-  const numerologyComponent = findComponent("NUMEROLOGY_FORM", components);
 
   const handleUserData = () => {
     defaultFormData["deleteuserdata"]({ ["numerology"]: null });
@@ -91,7 +95,7 @@ export default function NumerologySection({ data }: { data: any }) {
               )}
             </div>
             <NumerologyForm
-              formKeys={numerologyComponent}
+              formKeys={expressionNumberComponent}
               passdata={handlePassData}
             />
           </div>
@@ -99,7 +103,7 @@ export default function NumerologySection({ data }: { data: any }) {
       ) : (
         <>
           {Object.keys(response).length > 0 ? (
-            <div className='px-5 flex flex-col gap-14 w-full'>
+            <div className='px-5  flex flex-col gap-14 w-full'>
               <div className='flex max-w-3xl mx-auto border-b border-secondary  w-full pb-10 gap-6  items-start'>
                 <div className='flex flex-col gap-4'>
                   <h6 className=' text-zinc-200 md:text-2xl'>
@@ -121,45 +125,56 @@ export default function NumerologySection({ data }: { data: any }) {
                   </svg>
                 </button>
               </div>
-              <div className='max-w-3xl w-full mx-auto flex flex-col gap-5 '>
-                <FavorableTable
-                  bg='bg-gradient-to-r from-blue-400/80 to-blue-300'
-                  name='Life path number'
-                  color='bg-gradient-to-r from-blue-200 to-blue-300'
-                  desc={`Your life path number is ${response?.lifepath_number}. It represents both the situation and opportunities that are attracted to you as the result of your actions.`}
-                  value={response?.lifepath_number}
-                />
-                <FavorableTable
-                  name='Personality Number'
-                  bg='bg-gradient-to-r from-pink-400/80 to-pink-300'
-                  color='bg-gradient-to-r from-pink-200 to-pink-300'
-                  desc={`Your Personality number also called as Persona is ${response?.personality_number}. Personality Number is compliment to the inner aspect of the self.`}
-                  value={response?.personality_number}
-                />
-                <FavorableTable
-                  name='Expression Number'
-                  bg='bg-gradient-to-r from-purple-400/80 to-purple-300'
-                  color='bg-gradient-to-r from-purple-200 to-purple-300'
-                  desc={`Your Expression Number or Total Name Number is ${response?.expression_number}. It describes the magic that you bring into the world.`}
-                  value={response?.expression_number}
-                />
-                <FavorableTable
-                  name='Challenge Numbers'
-                  color='bg-gradient-to-r from-red-200 to-red-300'
-                  value={response?.challenge_numbers.join(",")}
-                />
-                <FavorableTable
-                  name=' Soul Urge Number '
-                  bg='bg-gradient-to-r from-yellow-400/80 to-yellow-300'
-                  color='bg-gradient-to-r from-yellow-100 to-yellow-300'
-                  value={response?.subconscious_self_number}
-                />
-                <FavorableTable
-                  bg='bg-gradient-to-r from-indigo-400/80 to-indigo-300'
-                  name='Subconscious Self Number'
-                  color='bg-gradient-to-r from-indigo-200 to-indigo-300'
-                  value={response?.subconscious_self_number}
-                />
+              <div className='max-w-4xl mx-auto '>
+                <h6
+                  style={{ lineHeight: 1.5 }}
+                  className='text-white mb-5 flex gap-2 items-center md:text-4xl text-3xl font-semibold'>
+                  {response?.name}, your expression number is :{" "}
+                  {response?.expression_number}
+                </h6>
+                <div className='flex flex-col max-w-3xl gap-10'>
+                  {response?.report
+                    .slice(0, 3)
+                    .map(
+                      (
+                        item:
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                              any,
+                              string | React.JSXElementConstructor<any>
+                            >
+                          | Iterable<React.ReactNode>
+                          | React.ReactPortal
+                          | React.PromiseLikeOfReactNode
+                          | null
+                          | undefined,
+                        i: React.Key | null | undefined
+                      ) => (
+                        <p className='md:text-lg text-zinc-200' key={i}>
+                          {item}
+                        </p>
+                      )
+                    )}
+                </div>
+              </div>
+              <div className='flex flex-col gap-10 max-w-3xl w-full mx-auto'>
+                <h3 className='md:text-3xl text-2xl font-semibold text-white'>
+                  More Numerology
+                </h3>
+                <div className='flex gap-5 flex-wrap'>
+                  <MoreCards
+                    link='/life-path-number'
+                    title='Life Path Number'
+                    icon={undefined}
+                  />
+                  <MoreCards
+                    link='/personality-number'
+                    title='Personality Number'
+                    icon={undefined}
+                  />
+                </div>
               </div>
             </div>
           ) : (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const style = require("../../styles/Home.module.css");
+const style = require("../../../styles/Home.module.css");
 export default function NumerologyForm({ formKeys, passdata }) {
   const [error, seterror] = useState(null);
   const [loader, setloader] = useState(false);

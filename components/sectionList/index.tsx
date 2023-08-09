@@ -31,6 +31,60 @@ const sectionsMap: any = {
       () => import("@/components/sections/image-text")
     ),
   },
+  numerology: {
+    default: dynamic(() => import("@/components/sections/forms/numerology")),
+    NumerologyStyleThree: dynamic(
+      () => import("@/components/sections/forms/numerology")
+    ),
+    NumerologyWithoutContent: dynamic(
+      () => import("@/components/sections/forms/numerology")
+    ),
+    NumerologyStyleTwo: dynamic(
+      () => import("@/components/sections/forms/numerology")
+    ),
+  },
+  "lifepath-number-calculator": {
+    default: dynamic(
+      () => import("@/components/sections/forms/lifePathNumber")
+    ),
+    LifePathNumberCalculatorStyleTwo: dynamic(
+      () => import("@/components/sections/forms/lifePathNumber")
+    ),
+    LifePathNumberCalculatorStyleThree: dynamic(
+      () => import("@/components/sections/forms/lifePathNumber")
+    ),
+    LifePathNumberCalculatorWithoutContent: dynamic(
+      () => import("@/components/sections/forms/lifePathNumber")
+    ),
+  },
+  "personality-number-calculator": {
+    default: dynamic(
+      () => import("@/components/sections/forms/personalityNumber")
+    ),
+    PersonalityNumberCalculatorWithoutContent: dynamic(
+      () => import("@/components/sections/forms/personalityNumber")
+    ),
+    PersonalityNumberCalculatorStyleTwo: dynamic(
+      () => import("@/components/sections/forms/personalityNumber")
+    ),
+    PersonalityNumberCalculatorStyleThree: dynamic(
+      () => import("@/components/sections/forms/personalityNumber")
+    ),
+  },
+  "expression-number-calculator": {
+    default: dynamic(
+      () => import("@/components/sections/forms/expressionNumber")
+    ),
+    ExpressionNumberCalculatorWithoutContent: dynamic(
+      () => import("@/components/sections/forms/expressionNumber")
+    ),
+    ExpressionNumberCalculatorStyleTwo: dynamic(
+      () => import("@/components/sections/forms/expressionNumber")
+    ),
+    ExpressionNumberCalculatorStyleThree: dynamic(
+      () => import("@/components/sections/forms/expressionNumber")
+    ),
+  },
 };
 
 export default function SectionList({ data }: { data: IFetchData }) {
