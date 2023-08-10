@@ -1,7 +1,6 @@
 import React from "react";
 import { svgIcon } from "../../../utils/const/svgIcon";
 import { useRouter } from "next/router";
-import { SignBgColor1 } from "../../../utils/const/colors";
 import { Sign } from "../calculator/confirmBirthCard";
 
 export const signs = [

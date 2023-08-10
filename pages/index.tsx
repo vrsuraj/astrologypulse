@@ -10,7 +10,7 @@ type Props = {
 export default function Home({ pageSection }: Props) {
   return (
     <div>
-      {pageSection?.map((item: any, i: number) => (
+      {pageSection?.sections?.map((item: any, i: number) => (
         <SectionList data={item} key={i} />
       ))}
     </div>
@@ -3066,19 +3066,19 @@ const pageSection = [
   },
 ];
 
-// export async function getStaticProps() {
-//   const getAndUpdateOrderDetail = async () => {
-//     const req = await DBEntry({
-//       url: `admin/page/homepage`,
-//       method: "GET",
-//     });
-//     return req;
-//   };
+export async function getStaticProps() {
+  const getAndUpdateOrderDetail = async () => {
+    const req = await DBEntry({
+      url: `admin/page/homepage`,
+      method: "GET",
+    });
+    return req;
+  };
 
-//   const data = await getAndUpdateOrderDetail();
-//   return {
-//     props: {
-//       pageSection: data?.success ? data?.response?.page_skeleton : {},
-//     },
-//   };
-// }
+  const data = await getAndUpdateOrderDetail();
+  return {
+    props: {
+      pageSection: data?.success ? data?.response?.page_skeleton : {},
+    },
+  };
+}
