@@ -76,7 +76,7 @@ export default function Card(props: Props) {
                 </Text>
               )}
               {props.desc && (
-                <Paragraph size="sm" color={textColor}>
+                <Paragraph size="base" color={textColor}>
                   {props.desc}
                 </Paragraph>
               )}

@@ -120,22 +120,23 @@ export default function CommonForm(props) {
 
   return (
     <div
-      // style={{ background: props.bgColor ? props.bgColor : "#1E1F24" }}
+      style={{ background: props.bgColor ? props.bgColor : "" }}
       className={`flex bg-primary pb-4 flex-col w-full`}
     >
+      {props?.children}
       <form
         onSubmit={submitingform}
         className={`px-3 md:px-7 py-3 flex mt-3 flex-col md:gap-y-8 gap-y-6 w-full`}
       >
-        {props.email_status && (
+        {props?.email_status && (
           <div className="flex flex-col gap-0 inputbox">
             <input
-              className={`${getInputStyle(props.type, props.style)} `}
+              className={`${getInputStyle(props?.type, props?.style)} `}
               type="email"
               name="email"
               onChange={handleinput}
               value={formValues.email}
-              placeholder={props?.formKeys?.props.email_label.value}
+              placeholder={props?.formKeys?.props?.email_label?.value}
             />
           </div>
         )}
@@ -146,19 +147,20 @@ export default function CommonForm(props) {
 
           <div className="">
             <input
-              className={`${getInputStyle(props.type, props.style)} `}
+              className={`${getInputStyle(props?.type, props?.style)} `}
               type="text"
               name="name"
               onChange={handleinput}
               value={formValues.name}
-              placeholder={props?.formKeys?.props.name_label.value}
+              placeholder={props?.formKeys?.props?.name_label?.value}
             />
           </div>
         </div>
         <div className="flex flex-col gap-2 inputbox">
-          {props.label && (
+          {props?.label && (
             <label className={`text-left`}>
-              {props.formKeys.date || props?.formKeys?.props.date_label.value}
+              {props?.formKeys?.date ||
+                props?.formKeys?.props?.date_label?.value}
             </label>
           )}
           <div className="flex gap-5 flex-grow-0">
@@ -167,8 +169,8 @@ export default function CommonForm(props) {
                 name="month"
                 value={formValues.month}
                 className={`${style.select2} ${getSelectStyle(
-                  props.type,
-                  props.style
+                  props?.type,
+                  props?.style
                 )}`}
                 onChange={handleNumber}
               >
@@ -191,7 +193,7 @@ export default function CommonForm(props) {
             </div>
             <div className="inputbox">
               <input
-                className={`${getInputStyle(props.type, props.style)} `}
+                className={`${getInputStyle(props?.type, props?.style)} `}
                 type="number"
                 name="day"
                 min={1}
@@ -204,7 +206,7 @@ export default function CommonForm(props) {
 
             <div className="inputbox">
               <input
-                className={`${getInputStyle(props.type, props.style)} `}
+                className={`${getInputStyle(props?.type, props?.style)} `}
                 type="number"
                 name="year"
                 min={1940}
@@ -217,9 +219,10 @@ export default function CommonForm(props) {
           </div>
         </div>
         <div className="inputbox">
-          {props.label && (
+          {props?.label && (
             <label className={`text-left`}>
-              {props.formKeys.time || props?.formKeys?.props.time_label.value}
+              {props?.formKeys?.time ||
+                props?.formKeys?.props?.time_label.value}
             </label>
           )}
           <div className="flex gap-5 ">
@@ -228,8 +231,8 @@ export default function CommonForm(props) {
                 name="hour"
                 value={formValues.hour}
                 className={`${style.select2} ${getSelectStyle(
-                  props.type,
-                  props.style
+                  props?.type,
+                  props?.style
                 )}`}
                 onChange={handleNumber}
               >
@@ -267,8 +270,8 @@ export default function CommonForm(props) {
                 name="min"
                 value={formValues.min}
                 className={`${style.select2} ${getSelectStyle(
-                  props.type,
-                  props.style
+                  props?.type,
+                  props?.style
                 )}`}
                 onChange={handleNumber}
               >
@@ -338,15 +341,16 @@ export default function CommonForm(props) {
           </div>
         </div>
         <div className="w-full flex flex-col gap-y-1 inputbox">
-          {props.label && (
+          {props?.label && (
             <label className={`text-left`}>
-              {props.formKeys.place || props?.formKeys?.props.place_label.value}
+              {props?.formKeys?.place ||
+                props?.formKeys?.props?.place_label?.value}
             </label>
           )}
           <DynamicSample
             type={props.type}
             style={props.style}
-            typeheadStyle={`${getInputStyle(props.type, props.style)} ${
+            typeheadStyle={`${getInputStyle(props?.type, props?.style)} ${
               props.style == "bg" ? "!p-[2px]" : "!p-0"
             } `}
             defaultPlace={[
@@ -356,13 +360,13 @@ export default function CommonForm(props) {
             clear={reqdate}
           />
         </div>
-        {(props.solar || props.transit) && (
+        {(props?.solar || props?.transit) && (
           <>
-            {props.solar && (
+            {props?.solar && (
               <div className="w-full flex-col flex gap-5">
                 {props.label && (
                   <label className={`text-left`}>
-                    {props.formKeys.solar_year}
+                    {props?.formKeys?.solar_year}
                   </label>
                 )}
                 <div className="flex w-full gap-10">
@@ -399,15 +403,15 @@ export default function CommonForm(props) {
               </div>
             )}
             <div className="w-full flex flex-col gap-y-1 inputbox">
-              {props.label && (
+              {props?.label && (
                 <label className={`text-left`}>
-                  {props.formKeys.current_place}
+                  {props?.formKeys?.current_place}
                 </label>
               )}
               <DynamicSample
-                type={props.type}
-                style={props.style}
-                typeheadStyle={`${getInputStyle(props.type, props.style)} ${
+                type={props?.type}
+                style={props?.style}
+                typeheadStyle={`${getInputStyle(props?.type, props?.style)} ${
                   props.style == "bg" ? "!p-[2px]" : "!p-0"
                 } `}
                 defaultPlace={[
@@ -435,9 +439,9 @@ export default function CommonForm(props) {
             className={`w-full capitalize  cursor-pointer text-[17px] rounded-md px-10 py-3 bg-gradient-to-r from-highlight  to-third  hover:from-third hover:to-highlight  duration-100 ease-in text-zinc-800 mt-3   `}
           >
             {props?.formKeys?.button_config?.button_text ||
-              props?.formKeys?.props.button_text.value}
+              props?.formKeys?.props.button_text?.value}
           </button>
-          {props.disclaimer && (
+          {props?.disclaimer && (
             <p className="text-zinc-400 text-[12px] mt-4 text-center">
               Disclaimer: {props.disclaimer}
             </p>

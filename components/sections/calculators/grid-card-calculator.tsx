@@ -35,7 +35,7 @@ export default function GridCardCalculator({ data, extra }: Props) {
   const styles = SectionStyle(sectionConfig);
   // Find each component once and store in a variable
   const headlineComponent = findComponent("HEADLINE", components);
-  const paragraphComponent = findComponent("PARAGRAPH", components);
+  const paragraphComponent = findComponent("CONTENT", components);
   const cardComponent = findComponent("CARDS", components);
 
   return (
@@ -54,7 +54,7 @@ export default function GridCardCalculator({ data, extra }: Props) {
             {headlineComponent?.props.content.value}
           </Text>
         )}
-        {allowedComponents.includes("PARAGRAPH") && paragraphComponent && (
+        {allowedComponents.includes("CONTENT") && paragraphComponent && (
           <Paragraph
             extra="max-w-3xl mx-auto"
             size={paragraphComponent?.props?.size?.value || "lg"}
@@ -132,6 +132,7 @@ export function RenderCardByType({
       return (
         <Card
           extra="h-full"
+          align={data?.props?.align?.value || "center"}
           button={{
             display: data?.props?.button_disaply?.value || false,
             target: data?.props?.target?.value || "self",

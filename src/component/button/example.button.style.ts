@@ -45,6 +45,7 @@ const base = cva(
       },
       animation: {
         none: [],
+        scale:["hover:scale-[1.04]"],
         pulse: ['animate-pulse'],
         bounce: ['animate-bounce'],
       },

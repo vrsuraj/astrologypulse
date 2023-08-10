@@ -156,8 +156,8 @@ export default function TarotPredictionCalculator({
     setTimeout(() => Call(), 400);
   };
   return (
-    <div>
-      <div id="tarot" className=" pb-14 min-h-screen">
+    <>
+      <div id="tarot" className="w-full  pb-14 min-h-screen">
         {BackButtonState && (
           <div className="absolute px-5 top-0 h-full flex justify-center pt-[200px] md:pt-0 md:items-center z-[2] bg-zinc-900/70 w-full left-0">
             {BackButtonLoader ? (
@@ -218,15 +218,15 @@ export default function TarotPredictionCalculator({
         </style>
 
         <div className="w-full">
-          <div className=" overflow-hidden  flex flex-col gap-5 md:rounded-[20px] max-w-4xl mx-auto w-full">
+          <div className=" overflow-hidden flex flex-col gap-5 md:rounded-[20px] max-w-4xl mx-auto w-full">
             {loader ? (
               <Loader2 />
             ) : (
               <>
                 {Object.keys(response).length === 0 ? (
                   <>
-                    <div id="tarot" className=" md:px-5  flex flex-col">
-                      <div className="flex flex-col mx-auto gap-5 text-center max-w-4xl">
+                    <div id="tarot" className=" md:px-5 w-full flex flex-col">
+                      <div className="flex w-full flex-col mx-auto gap-5 text-center max-w-4xl">
                         <div className="flex flex-col gap-5 items-center">
                           {allowedComponents.includes("HEADLINE") &&
                             headlineComponent && (
@@ -378,7 +378,7 @@ export default function TarotPredictionCalculator({
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

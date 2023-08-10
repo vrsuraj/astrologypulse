@@ -27,7 +27,7 @@ export default function Button(props: Props) {
     target,
     shadow_size,
     children,
-    extra,
+    extra = "max-w-[250px]",
     shadow_color,
     link,
     size,
@@ -103,7 +103,7 @@ export default function Button(props: Props) {
         style={styleButton(color)}
         onClick={() => (props?.callback ? props?.callback() : "")}
         target={target_link}
-        className={`max-w-[250px] w-full px-5 md:px-10 py-3 ${classes} capitalize ${extra} `}
+        className={` w-full px-5 md:px-10 py-3 ${classes} capitalize ${extra} `}
       >
         {children}
       </a>

@@ -35,7 +35,7 @@ export default function GridIconCardCalculator({ data, extra }: Props) {
   const styles = SectionStyle(sectionConfig);
   // Find each component once and store in a variable
   const headlineComponent = findComponent("HEADLINE", components);
-  const paragraphComponent = findComponent("PARAGRAPH", components);
+  const paragraphComponent = findComponent("CONTENT", components);
   const cardComponent = findComponent("CARDS", components);
   const cardComponentContent = filterArrayByNestedPropertyValue(
     cardComponent?.props?.items?.value,

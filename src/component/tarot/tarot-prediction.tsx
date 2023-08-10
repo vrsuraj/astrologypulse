@@ -20,7 +20,7 @@ export default function TarotPrediction({ data, extra }: Props) {
   const paragraphComponent = findComponent("PARAGRAPH", components);
 
   return (
-    <div className={`md:py-20 py-14 px-5 ${extra}`} style={styles}>
+    <div className={`md:py-20  w-full py-14 px-5 ${extra}`} style={styles}>
       <TarotPredictionCalculator
         allowedComponents={allowedComponents}
         headlineComponent={headlineComponent}

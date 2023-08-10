@@ -1,4 +1,5 @@
 import SectionList from "@/components/sectionList";
+import { DBEntry } from "@/utils/fetchAPI";
 // import { DBEntry } from "@/utils/fetchAPI";
 import React from "react";
 
@@ -6,7 +7,7 @@ type Props = {
   pageSection: any;
 };
 
-export default function Home({}: Props) {
+export default function Home({ pageSection }: Props) {
   return (
     <div>
       {pageSection?.map((item: any, i: number) => (

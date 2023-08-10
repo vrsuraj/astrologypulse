@@ -39,15 +39,15 @@ export default function CallToActionSectionStyle1({
     <div className="md:py-20 py-14 px-5 w-full">
       <div
         style={{
-          background: "linear-gradient( 135deg, #FFF6B7 10%, #F6416C 100%)",
+          background: " linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%)",
           ...styles,
         }}
-        className={`${customLayout}  flex  max-w-5xl mx-auto rounded-md md:p-20 p-7 sm:p-14`}
+        className={`${customLayout}  flex  max-w-5xl items-center mx-auto rounded-md md:p-20 p-7 sm:p-14`}
       >
-        <div className="w-full  flex flex-col md:gap-7 gap-5">
+        <div className="w-full  flex flex-col items-center md:gap-7 gap-5">
           {allowedComponents.includes("HEADLINE") && headlineComponent && (
             <Text
-              extra="dark:text-white text-zinc-800"
+              extra="dark:text-zinc-800"
               size={headlineComponent?.props?.size?.value || "4xl"}
               variant={headlineComponent?.props?.variant?.value}
               weight={headlineComponent?.props?.weight?.value || "semibold"}
@@ -58,7 +58,7 @@ export default function CallToActionSectionStyle1({
           )}
           {allowedComponents.includes("CONTENT") && paragraphComponent && (
             <Paragraph
-              extra="dark:text-zinc-300 text-zinc-700"
+              extra="dark:text-zinc-600 max-w-2xl w-full"
               size={paragraphComponent?.props?.size?.value}
             >
               {paragraphComponent?.props?.content?.value}
@@ -76,7 +76,7 @@ export default function CallToActionSectionStyle1({
               size={buttonComponent?.props?.size?.value}
               tone={buttonComponent?.props?.tone?.value || "solid"}
               target={buttonComponent?.props?.tab?.value}
-              link={"https://www.youtube.com/"}
+              link={buttonComponent?.props?.action?.value}
             >
               {buttonComponent?.props?.button_text.value}
             </Button>
@@ -94,7 +94,7 @@ export default function CallToActionSectionStyle1({
                 size={extraButtonComponent?.props?.size?.value}
                 tone={extraButtonComponent?.props?.tone?.value || "solid"}
                 target={extraButtonComponent?.props?.tab?.value}
-                link={"https://www.youtube.com/"}
+                link={extraButtonComponent?.props?.action?.value}
               >
                 {extraButtonComponent?.props?.button_text.value}
               </Button>

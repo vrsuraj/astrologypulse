@@ -1,12 +1,12 @@
 const AP_CONFIG = require("../ap.config.json");
 const API_URL = "https://json.astrologyapi.com/v1";
-const BASE_URL = "http://192.168.1.3:3003";
+const BASE_URL = "http://192.168.1.4:3003";
 //"https://astropages-express.pt8u8ec0fu2dc.ap-south-1.cs.amazonlightsail.com";
 const API_KEY = AP_CONFIG.ASTROLOGYAPI_API_KEY; //"3c6f3d429803b6c0c8db5d7b87886365";
 const USER_ID = AP_CONFIG.ASTROLOGYAPI_USERID; //"623480";
 const X_ASTROPAGES_KEY = AP_CONFIG.X_ASTROPAGES_KEY;
 const AUTHORISATION =
-  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjEsImVtYWlsIjoic3VyYWoueWFkYXZAdmVkaWNyaXNoaWFzdHJvLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5MTQ5MTE2NiwiZXhwIjoxNjkxNTc3NTY2fQ.dh_FGOAa8KROXHU8wY0lCU1VE5kAZefqxSAXltju-Ac";
+  "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NjUsImVtYWlsIjoiZGhhcm1pay5yYXRob2RAdmVkaWNyaXNoaWFzdHJvLmNvbSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY5MTU4NTE3NywiZXhwIjoxNjkxNjcxNTc3fQ.UZ3yId8icAhxjicDzmSGd2ob8wCS2kw6nox3ZH93eN4";
 
 export async function FetchApi(input) {
   if (input) {

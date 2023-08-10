@@ -15,7 +15,7 @@ export default function Synastry({ pageData }) {
     if (defaultFormData["synastry"]) {
       setUserData(defaultFormData["synastry"]);
     }
-  }, [defaultFormData?.transit]);
+  }, [defaultFormData?.synastry]);
 
   const handleForm = () => {
     const back_url = BackUrl(router.asPath);

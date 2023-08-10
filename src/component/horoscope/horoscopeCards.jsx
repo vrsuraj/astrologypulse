@@ -200,9 +200,7 @@ export function DifferentHoroscopeCard({ name, link, bg, extra }) {
 export function YesterdayHoroscopeCard({ data }) {
   return (
     <div
-      className={`${
-        SignBgColor1[data.sun_sign.toLowerCase()]
-      } gap-5 md:p-10 p-5 rounded-[15px] flex flex-col items-start`}
+      className={` gap-5 md:p-10 p-5 rounded-[15px] flex flex-col items-start`}
     >
       <div className="flex flex-col gap-5">
         <span className="max-w-max bg-white shadow-lg px-3 py-1 rounded-[15px] gap-2 font-semibold flex items-center">
@@ -214,3 +212,6 @@ export function YesterdayHoroscopeCard({ data }) {
     </div>
   );
 }
+// ${
+//         SignBgColor1[data.sun_sign.toLowerCase()]
+//       }

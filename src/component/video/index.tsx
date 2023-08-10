@@ -1,45 +1,47 @@
-import React from 'react'
+import React from "react";
 import { VideoProps } from "./video.types";
 import { VideoStyle } from "./video.style";
-import style from "../../styles/animation.module.css";
+import style from "../../../styles/animation.module.css";
 import dynamic from "next/dynamic";
-const DynamicPlayer = dynamic(() => import("react-player/lazy"), { ssr: false });
+const DynamicPlayer = dynamic(() => import("react-player/lazy"), {
+  ssr: false,
+});
 
+export default function Video(props: VideoProps) {
+  const wrapperClassName = props.wrapper_class || "";
+  const width = props.width || "w-full";
+  const src = props.src || "";
+  // const loading = props.loading || "lazy";
+  const radius = VideoStyle["radius"][props?.radius!] || "none";
+  const alt = props.alt || "";
+  const caption = props.caption || null;
+  const thumbnail = props.thumbnail || "/imgs/video_placeholder.png";
 
-export default function Video(props:VideoProps) {
-const wrapperClassName = props.wrapper_class || "";
-const width = props.width ||  "w-full";
-const src= props.src || "";
-// const loading = props.loading || "lazy";
-const radius = VideoStyle["radius"][props?.radius!] || "none";
-const alt = props.alt || "";
-const caption = props.caption || null
-const thumbnail = props.thumbnail || "/imgs/video_placeholder.png"
-
-return (
-    <div style={{}} className={`${wrapperClassName} ${width} aspect-video overflow-hidden ${radius}`}>
-        <DynamicPlayer 
+  return (
+    <div
+      style={{}}
+      className={`${wrapperClassName} ${width} aspect-video overflow-hidden ${radius}`}
+    >
+      <DynamicPlayer
         playsInline={true}
         controls={true}
         playIcon={<PlayIcon />}
         width="100%"
         light={
-             <img
-                src={thumbnail}
-                alt={alt}
-                className="w-full h-full"
-              />
+          <img
+            src={thumbnail}
+            alt={alt}
+            className="w-full object-cover h-full"
+          />
         }
         height="100%"
-        url={src} />
+        url={src}
+      />
     </div>
-        )
+  );
 }
 
-
-
-
-function PlayIcon({ playingState }:{playingState?:boolean}) {
+function PlayIcon({ playingState }: { playingState?: boolean }) {
   return (
     <>
       {!playingState ? (
@@ -89,8 +91,3 @@ function PlayIcon({ playingState }:{playingState?:boolean}) {
     </>
   );
 }
-
-
-
-
-

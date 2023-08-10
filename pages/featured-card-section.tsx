@@ -1,15 +1,10 @@
+import FeturedCardStyle1 from "@/components/sections/featuredCard/feturedCardstyle1";
 import React from "react";
-import CallToActionSectionStyle1 from "../components/sections/callToAction.tsx/callToActionStyle1";
-import CenterContentHeader from "../components/sections/header/centerContentHeader";
-import GridCardCalculator from "../components/sections/calculators/grid-card-calculator";
-import FeturedCardStyle1 from "../components/sections/featuredCard/feturedCardstyle1";
-import VideoPlayer from "../src/component/video";
-export default function Test() {
+
+export default function FeaturedCard() {
   return (
     <div>
-      {/* <CenterContentHeader data={pageSection?.page_skeleton?.sections[0]} /> */}
       <FeturedCardStyle1 data={pageSection} />
-      {/* <CallToActionSectionStyle1 data={pageSection} /> */}
     </div>
   );
 }
@@ -24,33 +19,33 @@ const pageSection = {
       value: "",
     },
     style: {
-      type: "FeaturedCardWithIconAndImage",
+      type: "Color",
       value: "",
     },
   },
   variants: {
-    Color: {
-      label: "Default",
-      value: "Color",
-      allowedComponents: ["CONTENT", "HEADLINE", "BUTTON"],
+    featured_style_one: {
+      label: "Featured Style 1",
+      value: "featured_style_one",
+      allowedComponents: ["CONTENT", "HEADLINE"],
     },
-    Image: {
-      label: "Featured Card With Background Image",
-      value: "Image",
-      allowedComponents: ["CONTENT", "HEADLINE", "BUTTON"],
+    featured_style_two: {
+      label: "Featured Style 2",
+      value: "featured_style_two",
+      allowedComponents: ["CONTENT", "HEADLINE", "BUTTON", "ICON"],
     },
-    FeaturedCardWithIcon: {
-      label: "Featured Card With Icon",
-      value: "FeaturedCardWithIcon",
-      allowedComponents: ["CONTENT", "HEADLINE", "BUTTON", "IMAGE"],
-    },
-    FeaturedCardWithIconAndImage: {
-      label: "Featured Card With Icon And Image",
-      value: "FeaturedCardWithIconAndImage",
+    featured_style_three: {
+      label: "Featured Style 3",
+      value: "featured_style_three",
       allowedComponents: ["CONTENT", "HEADLINE", "BUTTON", "ICON", "IMAGE"],
     },
+    featured_style_four: {
+      label: "Featured Style 4",
+      value: "featured_style_four",
+      allowedComponents: ["CONTENT", "HEADLINE", "BUTTON"],
+    },
   },
-  currentVariant: "FeaturedCardWithIconAndImage",
+  currentVariant: "featured_style_four",
   components: [
     {
       id: 1,
@@ -59,11 +54,11 @@ const pageSection = {
       props: {
         content: {
           input_type: "RICH_TEXTAREA",
-          value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
+          value: "Birth Chart Calculator",
         },
         weight: {
           input_type: "SELECT",
-          value: "light",
+          value: "bold",
           options: [
             {
               label: "thin",
@@ -142,7 +137,7 @@ const pageSection = {
         },
         size: {
           input_type: "SELECT",
-          value: "base",
+          value: "3xl",
           options: [
             {
               label: "none",

@@ -28,7 +28,7 @@ export default function Image(props: Props) {
       />
 
       {caption && (
-        <figcaption className='text-sm text-center mt-1'>
+        <figcaption className="text-sm dark:text-zinc-400 text-zinc-600 text-center mt-1">
           ({caption})
         </figcaption>
       )}

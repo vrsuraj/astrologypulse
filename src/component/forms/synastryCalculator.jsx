@@ -4,14 +4,16 @@ import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import { formInitialValue } from "../../../utils/const/formInitialValue";
 import useForm from "../../../context/useFormValue";
-import CommonForm from "./commonInput";
+// import CommonForm from "./commonInput";
 import { findComponent } from "@/utils/arrayFunc";
 import Paragraph from "../paragraph";
 import Text from "../text";
 import { dynamicRouter } from "@/utils/routing";
+import FormWrapper from "./formWrapper";
 
-const DynamicForm = dynamic(() => import("./commonInput"));
-export default function SynastryCalculator({ pageData, withoutText }) {
+const DynamicForm = dynamic(() => import("./formWrapper"));
+export default function SynastryCalculator({ data }) {
+  console.log(data);
   const [femaleform, setfemaleform] = useState(false);
   const [userData, setUserdata] = useState({
     female: formInitialValue(),
@@ -46,8 +48,9 @@ export default function SynastryCalculator({ pageData, withoutText }) {
       setfemaleform((prev) => !prev);
     }
   };
-  const [components, setComponents] = useState(pageData.components);
-
+  const [components, setComponents] = useState(data.components);
+  const allowedComponents =
+    data?.variants[data?.currentVariant].allowedComponents;
   const headlineComponent = findComponent("HEADLINE", components);
   const paragraphComponent = findComponent("CONTENT", components);
   const synastryPrimaryFormComponent = findComponent(
@@ -59,10 +62,12 @@ export default function SynastryCalculator({ pageData, withoutText }) {
     components
   );
 
+  const formStyle = synastryPrimaryFormComponent?.props?.form_style?.value;
+
   return (
     <div className={`flex flex-col gap-14 px-5 py-14`}>
-      {!withoutText && (
-        <div className="max-w-3xl mx-auto  text-center flex flex-col gap-5">
+      <div className="max-w-3xl mx-auto  text-center flex flex-col gap-5">
+        {allowedComponents.includes("HEADLINE") && headlineComponent && (
           <Text
             extra="!text-highlight !dark:text-hightlight"
             size={"4xl"}
@@ -71,50 +76,79 @@ export default function SynastryCalculator({ pageData, withoutText }) {
           >
             {headlineComponent?.props?.content?.value}
           </Text>
+        )}
+        {allowedComponents.includes("CONTENT") && paragraphComponent && (
           <Paragraph size={"lg"}>
             {paragraphComponent?.props?.content?.value}
           </Paragraph>
-        </div>
-      )}
-      <div
-        className={`w-full border border-third bg-primary max-w-lg bg-third/50 p-[2px] mx-auto`}
-      >
-        <Text
-          extra="!text-third !dark:text-third px-5 pt-5"
-          size={"2xl"}
-          variant="h1"
-          weight={"semibold"}
-        >
-          {!femaleform ? "Enter your details" : "Enter your partner details"}
-        </Text>
+        )}
+      </div>
+
+      <div className={`w-full  max-w-lg  p-[2px] mx-auto`}>
         {!femaleform ? (
           <>
-            <CommonForm
+            <FormWrapper
+              style={formStyle}
               solar={false}
+              bgColor={undefined}
+              disclaimer={undefined}
+              children={undefined}
               transit={false}
               handleData={(val) => handlepassdata(val, "female")}
-              formKeys={synastrySecondaryFormComponent}
-              label={true}
+              formLabel={synastrySecondaryFormComponent}
+              label_status={
+                synastrySecondaryFormComponent?.props?.label_status?.value
+              }
               email_status={
                 synastrySecondaryFormComponent?.props?.formKeys?.email_status
                   ?.value
               }
-              initialvalue={formInitialValue()}
               userData={userData?.female}
-            />
+            >
+              <Text
+                extra="!text-third !dark:text-third px-5 pt-5"
+                size={"2xl"}
+                variant="h1"
+                weight={"semibold"}
+              >
+                {!femaleform
+                  ? "Enter your details"
+                  : "Enter your partner details"}
+              </Text>
+            </FormWrapper>
           </>
         ) : (
           <>
             <DynamicForm
+              style={formStyle}
               solar={false}
+              bgColor={undefined}
+              disclaimer={undefined}
+              children={undefined}
+              label_status={
+                synastryPrimaryFormComponent?.props?.label_status?.value
+              }
               transit={false}
               handleData={(val) => handlepassdata(val, "male")}
-              formKeys={synastryPrimaryFormComponent}
+              formLabel={synastryPrimaryFormComponent}
               label={true}
-              email_status={false}
-              initialvalue={formInitialValue()}
+              email_status={
+                synastryPrimaryFormComponent?.props?.formKeys?.email_status
+                  ?.value
+              }
               userData={userData?.male}
-            />
+            >
+              <Text
+                extra="!text-third !dark:text-third px-5 pt-5"
+                size={"2xl"}
+                variant="h1"
+                weight={"semibold"}
+              >
+                {!femaleform
+                  ? "Enter your details"
+                  : "Enter your partner details"}
+              </Text>
+            </DynamicForm>
           </>
         )}
       </div>

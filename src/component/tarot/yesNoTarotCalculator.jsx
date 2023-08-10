@@ -196,9 +196,9 @@ export function YesNoTarotCalculatorComponent({
                           {paragraphComponent?.props?.content?.value}
                         </Paragraph>
                       )}
-                    <div className="bg-third text-zinc-800 arrow  px-5 md:px-10 py-2 max-w-max rounded-full mx-auto ">
-                      {allowedComponents.includes("SUB_HEADING") &&
-                        subHeadingComponent && (
+                    {allowedComponents.includes("SUB_HEADING") &&
+                      subHeadingComponent && (
+                        <div className="bg-third text-zinc-800 arrow  px-5 md:px-10 py-2 max-w-max rounded-full mx-auto ">
                           <Text
                             extra="!text-zinc-800 !dark:text-zinc-800"
                             size={
@@ -215,8 +215,8 @@ export function YesNoTarotCalculatorComponent({
                           >
                             {subHeadingComponent?.props.content.value}
                           </Text>
-                        )}
-                    </div>
+                        </div>
+                      )}
                   </div>
                   <div className="flex relative justify-center flex-col max-w-3xl mx-auto w-full">
                     <div className="flex  relative h-[150px] md:h-[280px] justify-center gap-2 w-full mt-20">

@@ -51,47 +51,53 @@ export default function BirthChartSection({ data }: { data: any }) {
     router.push(url?.link);
   };
 
-  return (
-    <div style={styles} className={`md:py-20 py-14 px-5`}>
-      <div
-        className={` ${customLayout} max-w-6xl mx-auto flex flex-col items-center gap-10 md:gap-14`}
-      >
-        <div className="max-w-3xl mx-auto flex flex-col gap-5 items-center justify-center w-full">
-          {allowedComponents.includes("HEADLINE") && headlineComponent && (
-            <Text
-              extra="!text-highlight !dark:text-hightlight"
-              size={headlineComponent?.props?.size?.value || "5xl"}
-              variant={headlineComponent?.props?.variant?.value || "h1"}
-              weight={headlineComponent?.props?.weight?.value || "bold"}
-              color={headlineComponent?.props?.color?.value}
-            >
-              {headlineComponent?.props.content.value}
-            </Text>
-          )}
+  const formStyle = birthChartComponent?.props?.form_style?.value;
 
-          {allowedComponents.includes("CONTENT") && contentComponent && (
-            <Paragraph
-              extra="text-center"
-              size="lg"
-              weight={contentComponent?.props?.weight?.value || "normal"}
-              color={contentComponent?.props?.color?.value}
-            >
-              {contentComponent?.props?.content?.value}
-            </Paragraph>
-          )}
+  return (
+    <>
+      <div style={styles} className={`md:py-20 py-14 px-5`}>
+        <div
+          className={` ${customLayout} max-w-6xl mx-auto flex flex-col items-center gap-10 md:gap-14`}
+        >
+          <div className="max-w-3xl mx-auto flex flex-col gap-5 items-center justify-center w-full">
+            {allowedComponents.includes("HEADLINE") && headlineComponent && (
+              <Text
+                extra="!text-highlight !dark:text-hightlight"
+                size={headlineComponent?.props?.size?.value || "5xl"}
+                variant={headlineComponent?.props?.variant?.value || "h1"}
+                weight={headlineComponent?.props?.weight?.value || "bold"}
+                color={headlineComponent?.props?.color?.value}
+              >
+                {headlineComponent?.props.content.value}
+              </Text>
+            )}
+
+            {allowedComponents.includes("CONTENT") && contentComponent && (
+              <Paragraph
+                extra="text-center"
+                size="lg"
+                weight={contentComponent?.props?.weight?.value || "normal"}
+                color={contentComponent?.props?.color?.value}
+              >
+                {contentComponent?.props?.content?.value}
+              </Paragraph>
+            )}
+          </div>
+          <FormWrapper
+            style={formStyle}
+            label_status={birthChartComponent?.props?.label_status?.value}
+            formLabel={birthChartComponent}
+            userData={userData}
+            handleData={handleData}
+            transit={false}
+            solar={false}
+            bgColor={undefined}
+            email_status={birthChartComponent?.props?.email_status?.value}
+            disclaimer={undefined}
+            children={undefined}
+          />
         </div>
-        <FormWrapper
-          label_status={birthChartComponent?.props?.label_status?.value}
-          formLabel={birthChartComponent}
-          userData={userData}
-          handleData={handleData}
-          transit={false}
-          solar={false}
-          bgColor={undefined}
-          email_status={birthChartComponent?.props?.email_status?.value}
-          disclaimer={undefined}
-        />
       </div>
-    </div>
+    </>
   );
 }
