@@ -2,8 +2,6 @@ import HoroscopeBarCardCalculator from "@/components/sections/horoscope/horoscop
 import HoroscopeCardCalculator from "@/components/sections/horoscope/horoscope-grid-card-with-icon";
 import React from "react";
 
-type Props = {};
-
 export default function HoroscopeCard() {
   return (
     <div>
