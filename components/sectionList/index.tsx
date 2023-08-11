@@ -5,12 +5,107 @@ import { IFetchData } from "@/interface/ICommon";
 // Dynamically import sections. These won't be loaded until they're used.
 const sectionsMap: any = {
   grids: {
-    default: dynamic(
+    grids_style_one: dynamic(
       () => import("@/components/sections/calculators/grid-card-calculator")
     ),
-    gridCardsStyleTwo: dynamic(
+    grids_style_two: dynamic(
+      () => import("@/components/sections/calculators/grid-card-calculator")
+    ),
+    grids_style_three: dynamic(
       () =>
         import("@/components/sections/calculators/grid-icon-card-calculator")
+    ),
+  },
+  "monthly-horoscope": {
+    horoscope_style_one: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_two: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_three: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_four: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_five: dynamic(
+      () => import("@/components/sections/horoscope/horoscope-bar")
+    ),
+  },
+  "daily-horoscope": {
+    horoscope_style_one: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_two: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_three: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_four: dynamic(
+      () =>
+        import("@/components/sections/horoscope/horoscope-grid-card-with-icon")
+    ),
+    horoscope_style_five: dynamic(
+      () => import("@/components/sections/horoscope/horoscope-bar")
+    ),
+  },
+  "hero-section": {
+    hero_style_one: dynamic(
+      () => import("@/components/sections/header/centerContentHeader")
+    ),
+    hero_style_two: dynamic(
+      () => import("@/components/sections/header/centerContentHeader")
+    ),
+    hero_style_three: dynamic(
+      () => import("@/components/sections/header/centerContentHeader")
+    ),
+  },
+  featured: {
+    featured_style_one: dynamic(
+      () => import("@/components/sections/featuredCard/feturedCardstyle1")
+    ),
+    featured_style_two: dynamic(
+      () => import("@/components/sections/featuredCard/feturedCardstyle1")
+    ),
+    featured_style_three: dynamic(
+      () => import("@/components/sections/featuredCard/feturedCardstyle1")
+    ),
+    featured_style_four: dynamic(
+      () => import("@/components/sections/featuredCard/feturedCardstyle1")
+    ),
+  },
+  cta: {
+    cta_style_one: dynamic(
+      () => import("@/components/sections/callToAction.tsx/callToActionStyle1")
+    ),
+    cta_style_two: dynamic(
+      () => import("@/components/sections/callToAction.tsx/callToActionStyle1")
+    ),
+    cta_style_three: dynamic(
+      () => import("@/components/sections/callToAction.tsx/callToActionStyle1")
+    ),
+    cta_style_four: dynamic(
+      () => import("@/components/sections/callToAction.tsx/callToActionStyle1")
+    ),
+  },
+  video: {
+    video_stlye_one: dynamic(
+      () => import("@/components/sections/video/centerVideo")
+    ),
+    video_style_two: dynamic(
+      () => import("@/components/sections/video/centerVideo")
+    ),
+    video_style_three: dynamic(
+      () => import("@/components/sections/video/centerVideo")
     ),
   },
   "split-section": {
