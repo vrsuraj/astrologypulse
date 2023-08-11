@@ -1787,12 +1787,13 @@ const pageSection = {
 export function HomeCard({ data, duration }) {
   const router = useRouter();
   const customDuration = duration ? duration : "daily";
+
   return (
     <>
-      <div className="max-w-6xl  w-full gap-x-5 gap-y-5 md:gap-6 mx-auto  grid sm:grid-cols-3 grid-cols-2 md:grid-cols-6">
+      <div className='max-w-6xl  w-full gap-x-5 gap-y-5 md:gap-6 mx-auto  grid sm:grid-cols-3 grid-cols-2 md:grid-cols-6'>
         {/*<Trail3 open={isVisible}>*/}
-        {data.map((item, i) => (
-          <div className="flex w-full  flex-col gap-1 items-center">
+        {data?.map((item, i) => (
+          <div className='flex w-full  flex-col gap-1 items-center'>
             <div
               onClick={() =>
                 router.push(
@@ -1800,12 +1801,11 @@ export function HomeCard({ data, duration }) {
                 )
               }
               key={i}
-              className=" text-white  flex justify-center items-center w-full border-2 border-secondary hover:border-zinc-300 cursor-pointer rounded-[10px] group bg-gradient-to-bl from-primary to-secondary duration-150 ease-in p-1 md:p-2"
-            >
-              <div className="flex p-4 md:p-4 w-full  md:min-w-[150px] h-[100px] justify-center items-center ">
+              className=' text-white  flex justify-center items-center w-full border-2 border-secondary hover:border-zinc-300 cursor-pointer rounded-[10px] group bg-gradient-to-bl from-primary to-secondary duration-150 ease-in p-1 md:p-2'>
+              <div className='flex p-4 md:p-4 w-full  md:min-w-[150px] h-[100px] justify-center items-center '>
                 <Sign
                   name={item.name}
-                  size="md:text-[50px] text-[40px]"
+                  size='md:text-[50px] text-[40px]'
                   color={`${SignColor[item.name.toLowerCase()]}`}
                 />
                 {/* <img
@@ -1816,8 +1816,7 @@ export function HomeCard({ data, duration }) {
             </div>
             <h6
               style={{ color: SignColor[item.name.toLowerCase()] }}
-              className={`md:text-xl md:mt-2 text-lg `}
-            >
+              className={`md:text-xl md:mt-2 text-lg `}>
               {item.name}
             </h6>
           </div>

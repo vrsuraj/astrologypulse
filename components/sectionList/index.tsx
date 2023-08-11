@@ -109,60 +109,93 @@ const sectionsMap: any = {
     ),
   },
   "split-section": {
-    ContentImageRight: dynamic(
+    split_section_style_one: dynamic(
       () => import("@/components/sections/image-text")
     ),
-    ContentImageLeft: dynamic(() => import("@/components/sections/image-text")),
-    HeadlineContentImageRight: dynamic(
+    split_section_style_two: dynamic(
       () => import("@/components/sections/image-text")
     ),
-    HeadlineContentImageLeft: dynamic(
+    split_section_style_three: dynamic(
       () => import("@/components/sections/image-text")
     ),
-    HeadlineContentButtonImageRight: dynamic(
+    split_section_style_four: dynamic(
       () => import("@/components/sections/image-text")
     ),
-    HeadlineContentButtonImageLeft: dynamic(
+    split_section_style_five: dynamic(
+      () => import("@/components/sections/image-text")
+    ),
+    split_section_style_six: dynamic(
+      () => import("@/components/sections/image-text")
+    ),
+    split_section_style_seven: dynamic(
+      () => import("@/components/sections/image-text")
+    ),
+    split_section_style_eight: dynamic(
       () => import("@/components/sections/image-text")
     ),
   },
   numerology: {
-    default: dynamic(() => import("@/components/sections/forms/numerology")),
-    NumerologyStyleThree: dynamic(
+    numerology_style_one: dynamic(
       () => import("@/components/sections/forms/numerology")
     ),
-    NumerologyWithoutContent: dynamic(
+    numerology_style_two: dynamic(
       () => import("@/components/sections/forms/numerology")
     ),
-    NumerologyStyleTwo: dynamic(
+    numerology_style_three: dynamic(
+      () => import("@/components/sections/forms/numerology")
+    ),
+    numerology_style_four: dynamic(
+      () => import("@/components/sections/forms/numerology")
+    ),
+    numerology_style_five: dynamic(
       () => import("@/components/sections/forms/numerology")
     ),
   },
   "lifepath-number-calculator": {
-    default: dynamic(
+    lifepath_number_style_one: dynamic(
       () => import("@/components/sections/forms/lifePathNumber")
     ),
-    LifePathNumberCalculatorStyleTwo: dynamic(
+    lifepath_number_style_two: dynamic(
       () => import("@/components/sections/forms/lifePathNumber")
     ),
-    LifePathNumberCalculatorStyleThree: dynamic(
+    lifepath_number_style_three: dynamic(
       () => import("@/components/sections/forms/lifePathNumber")
     ),
-    LifePathNumberCalculatorWithoutContent: dynamic(
+    lifepath_number_style_four: dynamic(
+      () => import("@/components/sections/forms/lifePathNumber")
+    ),
+    lifepath_number_style_five: dynamic(
       () => import("@/components/sections/forms/lifePathNumber")
     ),
   },
   "birth-chart": {
-    default: dynamic(() => import("@/components/sections/forms/birthChart")),
-    BirthChartStyleTwo: dynamic(
+    birth_chart_style_one: dynamic(
       () => import("@/components/sections/forms/birthChart")
     ),
-    BirthChartWithoutContent: dynamic(
+    birth_chart_style_two: dynamic(
+      () => import("@/components/sections/forms/birthChart")
+    ),
+    birth_chart_style_three: dynamic(
+      () => import("@/components/sections/forms/birthChart")
+    ),
+    birth_chart_style_four: dynamic(
+      () => import("@/components/sections/forms/birthChart")
+    ),
+    birth_chart_style_five: dynamic(
       () => import("@/components/sections/forms/birthChart")
     ),
   },
   "synastry-chart": {
-    default: dynamic(
+    synastry_chart_style_one: dynamic(
+      () => import("../../src/component/forms/synastryCalculator")
+    ),
+    synastry_chart_style_two: dynamic(
+      () => import("../../src/component/forms/synastryCalculator")
+    ),
+    synastry_chart_style_three: dynamic(
+      () => import("../../src/component/forms/synastryCalculator")
+    ),
+    synastry_chart_style_four: dynamic(
       () => import("../../src/component/forms/synastryCalculator")
     ),
   },
@@ -189,30 +222,36 @@ const sectionsMap: any = {
     ),
   },
   "personality-number-calculator": {
-    default: dynamic(
+    personality_number_style_one: dynamic(
       () => import("@/components/sections/forms/personalityNumber")
     ),
-    PersonalityNumberCalculatorWithoutContent: dynamic(
+    personality_number_style_two: dynamic(
       () => import("@/components/sections/forms/personalityNumber")
     ),
-    PersonalityNumberCalculatorStyleTwo: dynamic(
+    personality_number_style_three: dynamic(
       () => import("@/components/sections/forms/personalityNumber")
     ),
-    PersonalityNumberCalculatorStyleThree: dynamic(
+    personality_number_style_four: dynamic(
+      () => import("@/components/sections/forms/personalityNumber")
+    ),
+    personality_number_style_five: dynamic(
       () => import("@/components/sections/forms/personalityNumber")
     ),
   },
   "expression-number-calculator": {
-    default: dynamic(
+    expression_calculator_style_one: dynamic(
       () => import("@/components/sections/forms/expressionNumber")
     ),
-    ExpressionNumberCalculatorWithoutContent: dynamic(
+    expression_calculator_style_two: dynamic(
       () => import("@/components/sections/forms/expressionNumber")
     ),
-    ExpressionNumberCalculatorStyleTwo: dynamic(
+    expression_calculator_style_three: dynamic(
       () => import("@/components/sections/forms/expressionNumber")
     ),
-    ExpressionNumberCalculatorStyleThree: dynamic(
+    expression_calculator_style_four: dynamic(
+      () => import("@/components/sections/forms/expressionNumber")
+    ),
+    expression_calculator_style_five: dynamic(
       () => import("@/components/sections/forms/expressionNumber")
     ),
   },
