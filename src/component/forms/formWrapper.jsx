@@ -68,20 +68,18 @@ export default function FormWrapper({
       </style>
       {style == "stylishform" ? (
         <div
-          className="max-w-max w-full z-[1] overflow-hidden relative mx-auto p-[2px] "
+          className='max-w-max w-full z-[1] overflow-hidden relative mx-auto p-[2px] '
           style={{
             boxShadow: "0 0 27px rgba(173,40,40,.48)",
             background:
               "linear-gradient(0deg,rgba(22,4,8,.5),rgba(22,4,8,.5)),linear-gradient(100.41deg,#ff5b37 .52%,#ab0052 100.52%)",
-          }}
-        >
-          <div className="blob" />
+          }}>
+          <div className='blob' />
           <div
             className={`${
               bg_color ? "" : "bg-third/50 "
-            }  p-[2px] w-full max-w-max  rounded-md `}
-          >
-            <div className="max-w-lg w-full rounded-md ">
+            }  p-[2px] w-full max-w-max  rounded-md `}>
+            <div className='max-w-lg w-full rounded-md '>
               <CommonForm
                 bgColor={bg_color}
                 solar={transit ? transit : false}
@@ -92,15 +90,14 @@ export default function FormWrapper({
                 email_status={email_status ? email_status : false}
                 initialvalue={formInitialValue()}
                 userData={userData}
-                disclaimer={disclaimer}
-              >
+                disclaimer={disclaimer}>
                 {children}
               </CommonForm>
             </div>
           </div>
         </div>
       ) : (
-        <div className="max-w-lg w-full border border-third overflow-hidden rounded-md ">
+        <div className='max-w-lg w-full border border-third overflow-hidden rounded-md '>
           <CommonForm
             bgColor={bg_color}
             solar={transit ? transit : false}
@@ -111,8 +108,7 @@ export default function FormWrapper({
             email_status={email_status ? email_status : false}
             initialvalue={formInitialValue()}
             userData={userData}
-            disclaimer={disclaimer}
-          >
+            disclaimer={disclaimer}>
             {children}
           </CommonForm>
         </div>

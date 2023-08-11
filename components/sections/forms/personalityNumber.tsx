@@ -9,15 +9,26 @@ import { findComponent } from "@/utils/arrayFunc";
 import { FetchApi } from "@/utils/fetchAPI";
 import { Loader2 } from "@/utils/loader";
 import { MoreCards } from "../../cards/calculatorCard";
+import Image from "@/src/component/image";
 
 export function getLayout(variant: string) {
   switch (variant) {
-    case "default":
-    case "PersonalityNumberCalculatorWithoutContent":
-    case "PersonalityNumberCalculatorStyleTwo":
+    case "personality_number_style_one":
+    case "personality_number_style_two":
+    case "personality_number_style_three":
+    case "personality_number_style_four":
       return " md:flex-col justify-center text-center";
 
-    case "PersonalityNumberCalculatorStyleThree":
+    case "personality_number_style_five":
+      return "md:flex-row";
+  }
+}
+
+export function getFormLayout(variant: string) {
+  switch (variant) {
+    case "personality_number_style_four":
+      return "md:flex-row-reverse";
+    default:
       return "md:flex-row";
   }
 }
@@ -27,6 +38,8 @@ export default function NumerologySection({ data }: { data: any }) {
     data?.variants[data?.currentVariant].allowedComponents;
   const [components, setComponents] = useState(data.components);
   const customLayout = getLayout(data?.currentVariant);
+  const customFormLayout = getFormLayout(data?.currentVariant);
+
   const defaultFormData = useForm();
   const [userData, setUserData] = useState({});
   const [response, setResponse] = useState<any>({});
@@ -53,6 +66,7 @@ export default function NumerologySection({ data }: { data: any }) {
     "PERSONALITY_NUMBER_CALCULATOR_FORM",
     components
   );
+  const imageComponent = findComponent("IMAGE", components);
 
   const fetchdata = async (e: any) => {
     const ApiCall = await FetchApi({
@@ -95,10 +109,24 @@ export default function NumerologySection({ data }: { data: any }) {
                 </Paragraph>
               )}
             </div>
-            <NumerologyForm
-              formKeys={personalityNumberComponent}
-              passdata={handlePassData}
-            />
+
+            <div
+              className={`flex gap-10 items-center w-full ${customFormLayout}`}>
+              <NumerologyForm
+                formKeys={personalityNumberComponent}
+                passdata={handlePassData}
+              />
+              {allowedComponents.includes("IMAGE") && imageComponent && (
+                <Image
+                  width={imageComponent?.props?.width?.value}
+                  src={imageComponent?.props?.src?.value}
+                  alt={imageComponent?.props?.alt?.value}
+                  caption={imageComponent?.props?.caption?.value}
+                  fit={imageComponent?.props?.fit?.value}
+                  position={imageComponent?.props?.position?.value}
+                  radius={imageComponent?.props?.radius?.value}></Image>
+              )}
+            </div>
           </div>
         </>
       ) : (

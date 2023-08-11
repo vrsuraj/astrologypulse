@@ -8,14 +8,25 @@ import useForm from "../../../context/useFormValue";
 import { findComponent } from "@/utils/arrayFunc";
 import { FetchApi } from "@/utils/fetchAPI";
 import { Loader2 } from "@/utils/loader";
+import Image from "@/src/component/image";
 export function getLayout(variant: string) {
   switch (variant) {
-    case "default":
-    case "NumerologyWithoutContent":
-    case "NumerologyStyleTwo":
+    case "numerology_style_one":
+    case "numerology_style_two":
+    case "numerology_style_three":
+    case "numerology_style_four":
       return " md:flex-col justify-center text-center";
 
-    case "NumerologyStyleThree":
+    case "numerology_style_five":
+      return "md:flex-row";
+  }
+}
+
+export function getFormLayout(variant: string) {
+  switch (variant) {
+    case "numerology_style_four":
+      return "md:flex-row-reverse";
+    default:
       return "md:flex-row";
   }
 }
@@ -25,6 +36,7 @@ export default function NumerologySection({ data }: { data: any }) {
     data?.variants[data?.currentVariant].allowedComponents;
   const [components, setComponents] = useState(data.components);
   const customLayout = getLayout(data?.currentVariant);
+  const customFormLayout = getFormLayout(data?.currentVariant);
   const defaultFormData = useForm();
   const [userData, setUserData] = useState({});
   const [response, setResponse] = useState<any>({});
@@ -57,6 +69,7 @@ export default function NumerologySection({ data }: { data: any }) {
   const headlineComponent = findComponent("HEADLINE", components);
   const contentComponent = findComponent("CONTENT", components);
   const numerologyComponent = findComponent("NUMEROLOGY_FORM", components);
+  const imageComponent = findComponent("IMAGE", components);
 
   const handleUserData = () => {
     defaultFormData["deleteuserdata"]({ ["numerology"]: null });
@@ -73,7 +86,7 @@ export default function NumerologySection({ data }: { data: any }) {
             <div className={` px-5 flex flex-col gap-5`}>
               {allowedComponents.includes("HEADLINE") && headlineComponent && (
                 <Text
-                  extra={`${customLayout}`}
+                  extra={`${customLayout}  md:text-6xl   text-5xl text-highlight font-semibold`}
                   variant={headlineComponent.props.variant.value}
                   weight={headlineComponent.props.weight.value}
                   color={"red"}>
@@ -83,17 +96,30 @@ export default function NumerologySection({ data }: { data: any }) {
 
               {allowedComponents.includes("CONTENT") && contentComponent && (
                 <Paragraph
-                  extra={`${customLayout}`}
+                  extra={`${customLayout} max-w-2xl text-zinc-300 md:text-lg mx-auto`}
                   weight={contentComponent.props.weight.value}
                   color={contentComponent.props?.color?.value}>
                   {contentComponent.props.content.value}
                 </Paragraph>
               )}
             </div>
-            <NumerologyForm
-              formKeys={numerologyComponent}
-              passdata={handlePassData}
-            />
+            <div
+              className={`flex gap-10 items-center w-full ${customFormLayout}`}>
+              <NumerologyForm
+                formKeys={numerologyComponent}
+                passdata={handlePassData}
+              />
+              {allowedComponents.includes("IMAGE") && imageComponent && (
+                <Image
+                  width={imageComponent?.props?.width?.value}
+                  src={imageComponent?.props?.src?.value}
+                  alt={imageComponent?.props?.alt?.value}
+                  caption={imageComponent?.props?.caption?.value}
+                  fit={imageComponent?.props?.fit?.value}
+                  position={imageComponent?.props?.position?.value}
+                  radius={imageComponent?.props?.radius?.value}></Image>
+              )}
+            </div>
           </div>
         </>
       ) : (

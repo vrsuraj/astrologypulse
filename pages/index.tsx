@@ -21,26 +21,35 @@ const pageSection = [
   {
     type: "GRIDS",
     id: "grids",
-    label: "Grid Cards Calculator",
+    label: "Grid Cards ",
     config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
       style: {
-        type: "default",
+        type: "grids_style_one",
         value: "",
       },
     },
     variants: {
-      default: {
-        label: "Default",
-        value: "default",
+      grids_style_one: {
+        label: "Grid Cards Style 1",
+        value: "grids_style_one",
         allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
       },
-      gridCardsStyleTwo: {
-        label: "Grid Cards Style Two",
-        value: "gridCardsStyleTwo",
+      grids_style_two: {
+        label: "Grid Cards Style 2",
+        value: "grids_style_two",
         allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
+      },
+      grids_style_three: {
+        label: "Grid Cards Style 3",
+        value: "grids_style_three",
+        allowedComponents: ["HEADLINE", "CARDS", "BUTTON"],
       },
     },
-    currentVariant: "default",
+    currentVariant: "grids_style_one",
     components: [
       {
         id: 1,
@@ -92,8 +101,8 @@ const pageSection = [
         props: {
           items: {
             input_type: "CARDS",
-            card_limit: 4,
-            card_length: 4,
+            card_limit: 3,
+            card_length: 3,
             value: [
               {
                 type: "CARD",
@@ -525,9 +534,482 @@ const pageSection = [
                   },
                 },
               },
+            ],
+          },
+        },
+      },
+      {
+        id: 3,
+        type: "HEADLINE",
+        label: "Headline",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value: "Unlock the Secrets of Your Destiny with AstrologyPulse",
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+
+          variant: {
+            input_type: "SELECT",
+            value: "h5",
+            options: [
+              {
+                label: "h1",
+                value: "h1",
+              },
+              {
+                label: "h2",
+                value: "h2",
+              },
+              {
+                label: "h3",
+                value: "h3",
+              },
+              {
+                label: "h4",
+                value: "h4",
+              },
+              {
+                label: "h5",
+                value: "h5",
+              },
+              {
+                label: "h6",
+                value: "h6",
+              },
+              {
+                label: "paragraph",
+                value: "p",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 4,
+        type: "BUTTON",
+        label: "Button",
+        props: {
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Hero Alom",
+            hidden: false,
+          },
+          animation: {
+            input_type: "SELECT",
+            value: "pulse",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "pulse",
+                value: "pulse",
+              },
+              {
+                label: "bounce",
+                value: "bounce",
+              },
+            ],
+            hidden: false,
+          },
+          color: {
+            input_type: "COLOR_PICKER",
+            value: "none",
+            hidden: false,
+          },
+
+          radius: {
+            input_type: "SELECT",
+            value: "square",
+            options: [
+              {
+                label: "Square",
+                value: "square",
+              },
+              {
+                label: "Rounded",
+                value: "rounded",
+              },
+              {
+                label: "Pill",
+                value: "pill",
+              },
+            ],
+            hidden: false,
+          },
+          shadow_size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+          shadow_color: {
+            input_type: "COLOR_PICKER",
+            value: "#d63031",
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "lg",
+            options: [
+              {
+                label: "Extra small",
+                value: "xs",
+              },
+              {
+                label: "Small",
+                value: "sm",
+              },
+              {
+                label: "Medium",
+                value: "md",
+              },
+              {
+                label: "Large",
+                value: "lg",
+              },
+            ],
+            hidden: false,
+          },
+          tone: {
+            input_type: "SELECT",
+            value: "outline",
+            options: [
+              {
+                label: "Solid",
+                value: "solid",
+              },
+              {
+                label: "Light",
+                value: "light",
+              },
+              {
+                label: "Outline",
+                value: "outline",
+              },
+              {
+                label: "Transparent",
+                value: "transparent",
+              },
+            ],
+            hidden: false,
+          },
+          target: {
+            input_type: "SELECT",
+            value: "self",
+            options: [
+              {
+                label: "Current Tab",
+                value: "self",
+              },
+              {
+                label: "New Tab",
+                value: "blank",
+              },
+            ],
+            hidden: false,
+          },
+          action: {
+            input_type: "ACTION_BUTTON",
+            value: "transit-chart",
+            hidden: false,
+          },
+        },
+      },
+    ],
+  },
+  {
+    type: "GRIDS",
+    id: "grids",
+    label: "Interactive Grid Cards Calculator",
+    config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
+      style: {
+        type: "grids_style_one",
+        value: "",
+      },
+    },
+    variants: {
+      grids_style_one: {
+        label: "Grid Cards Style 1",
+        value: "grids_style_one",
+        allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
+      },
+      grids_style_two: {
+        label: "Grid Cards Style 2",
+        value: "grids_style_two",
+        allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
+      },
+      grids_style_three: {
+        label: "Grid Cards Style 3",
+        value: "grids_style_three",
+        allowedComponents: ["HEADLINE", "CARDS", "BUTTON"],
+      },
+    },
+    currentVariant: "grids_style_one",
+    components: [
+      {
+        id: 1,
+        type: "CONTENT",
+        label: "Content",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value:
+              "Prepare to delve into the fascinating realm of the stars and unlock the secrets they hold. Embark on a personal astrology exploration today and experience a transformative cosmic adventure that will shed light on your path, like a steadfast guiding North Star.",
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 2,
+        type: "CARDS",
+        label: "Cards",
+        props: {
+          items: {
+            input_type: "CARDS",
+            card_limit: 3,
+            card_length: 3,
+            value: [
               {
                 type: "CARD",
-                label: "Card 4",
+                label: "Card 1",
+                props: {
+                  card_type: {
+                    input_type: "SELECT",
+                    value: "CARD",
+                    options: [
+                      {
+                        label: "Default",
+                        value: "CARD",
+                      },
+                      {
+                        label: "Horoscope Card",
+                        value: "HOROSCOPE_CARD",
+                      },
+                      {
+                        label: "Icon Card",
+                        value: "ICON_CARD",
+                      },
+                      {
+                        label: "Zodiac Compatibility Card",
+                        value: "ZODIAC_COMPATIBILITY_CARD",
+                      },
+                    ],
+                    hidden: false,
+                  },
+
+                  sub_heading: {
+                    input_type: "TEXT_INPUT",
+                    value: "Free Personal Horoscope",
+                  },
+
+                  image: {
+                    input_type: "FILE_UPLOAD",
+                    value:
+                      "https://astro-page-14.vercel.app/imgs/birth-chart.svg",
+                    hidden: false,
+                  },
+                  content: {
+                    input_type: "RICH_TEXTAREA",
+                    value:
+                      "Discover the cosmic energies that shape your day and get clear guidance, inspiration, and a sprinkle of magic to navigate life's twists and turns. With a 100% personalised touch, your daily horoscope becomes a cherished roadmap, helping you make the most of every moment and harness the power of the stars.",
+                  },
+                  radius: {
+                    input_type: "SELECT",
+                    value: "none",
+                    options: [
+                      {
+                        label: "none",
+                        value: "none",
+                      },
+                      {
+                        label: "sm",
+                        value: "sm",
+                      },
+                      {
+                        label: "normal",
+                        value: "base",
+                      },
+                      {
+                        label: "md",
+                        value: "md",
+                      },
+                      {
+                        label: "lg",
+                        value: "lg",
+                      },
+                      {
+                        label: "xl",
+                        value: "xl",
+                      },
+                      {
+                        label: "2xl",
+                        value: "2xl",
+                      },
+                      {
+                        label: "3xl",
+                        value: "3xl",
+                      },
+                      {
+                        label: "full",
+                        value: "full",
+                      },
+                    ],
+                  },
+                  shadow_size: {
+                    input_type: "SELECT",
+                    value: "base",
+                    options: [
+                      {
+                        label: "none",
+                        value: "none",
+                      },
+                      {
+                        label: "sm",
+                        value: "sm",
+                      },
+                      {
+                        label: "base",
+                        value: "base",
+                      },
+                      {
+                        label: "md",
+                        value: "md",
+                      },
+                      {
+                        label: "lg",
+                        value: "lg",
+                      },
+                      {
+                        label: "xl",
+                        value: "xl",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  target: {
+                    input_type: "SELECT",
+                    value: "self",
+                    options: [
+                      {
+                        label: "Current Tab",
+                        value: "self",
+                      },
+                      {
+                        label: "New Tab",
+                        value: "blank",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  link: {
+                    input_type: "TOGGLE_BUTTON",
+                    value: false,
+                    hidden: false,
+                  },
+                  action: {
+                    input_type: "TEXT_INPUT",
+                    value: "/demo",
+                    hidden: false,
+                  },
+                },
+              },
+              {
+                type: "CARD",
+                label: "Card 2",
                 props: {
                   card_type: {
                     input_type: "SELECT",
@@ -554,18 +1036,162 @@ const pageSection = [
                   },
                   sub_heading: {
                     input_type: "TEXT_INPUT",
-                    value: "Synastry Chart",
+                    value: "Natal Chart",
                   },
 
                   image: {
                     input_type: "FILE_UPLOAD",
-                    value: "https://astro-page-14.vercel.app/imgs/heart.svg",
+                    value:
+                      "https://astro-page-14.vercel.app/imgs/birth-chart.svg",
                     hidden: false,
                   },
                   content: {
                     input_type: "RICH_TEXTAREA",
                     value:
-                      "The Synastry Chart is a powerful tool that compares and intertwines the birth charts of two individuals, unraveling the intricate dance of their cosmic connections. Gain profound insights into the dynamics, compatibility, and potential challenges within your relationships. Our expert astrologers will navigate the celestial tapestry, highlighting the harmonious aspects, areas of growth, and potential areas of tension.",
+                      "Your natal (or birth) chart is a cosmic snapshot, capturing the precise arrangement of planets and constellations at the moment of your birth. Our expert astrologers decode this celestial map, revealing valuable insights into your personality, talents, and life's patterns. Gain a profound understanding of yourself and unleash your true potential. ",
+                  },
+                  radius: {
+                    input_type: "SELECT",
+                    value: "none",
+                    options: [
+                      {
+                        label: "none",
+                        value: "none",
+                      },
+                      {
+                        label: "sm",
+                        value: "sm",
+                      },
+                      {
+                        label: "normal",
+                        value: "base",
+                      },
+                      {
+                        label: "md",
+                        value: "md",
+                      },
+                      {
+                        label: "lg",
+                        value: "lg",
+                      },
+                      {
+                        label: "xl",
+                        value: "xl",
+                      },
+                      {
+                        label: "2xl",
+                        value: "2xl",
+                      },
+                      {
+                        label: "3xl",
+                        value: "3xl",
+                      },
+                      {
+                        label: "full",
+                        value: "full",
+                      },
+                    ],
+                  },
+                  shadow_size: {
+                    input_type: "SELECT",
+                    value: "base",
+                    options: [
+                      {
+                        label: "none",
+                        value: "none",
+                      },
+                      {
+                        label: "sm",
+                        value: "sm",
+                      },
+                      {
+                        label: "base",
+                        value: "base",
+                      },
+                      {
+                        label: "md",
+                        value: "md",
+                      },
+                      {
+                        label: "lg",
+                        value: "lg",
+                      },
+                      {
+                        label: "xl",
+                        value: "xl",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  target: {
+                    input_type: "SELECT",
+                    value: "self",
+                    options: [
+                      {
+                        label: "Current Tab",
+                        value: "self",
+                      },
+                      {
+                        label: "New Tab",
+                        value: "blank",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  link: {
+                    input_type: "TOGGLE_BUTTON",
+                    value: false,
+                    hidden: false,
+                  },
+                  action: {
+                    input_type: "TEXT_INPUT",
+                    value: "/demo",
+                    hidden: false,
+                  },
+                },
+              },
+              {
+                type: "CARD",
+                label: "Card 3",
+                props: {
+                  card_type: {
+                    input_type: "SELECT",
+                    value: "CARD",
+                    options: [
+                      {
+                        label: "Default",
+                        value: "CARD",
+                      },
+                      {
+                        label: "Horoscope Card",
+                        value: "HOROSCOPE_CARD",
+                      },
+                      {
+                        label: "Icon Card",
+                        value: "ICON_CARD",
+                      },
+                      {
+                        label: "Zodiac Compatibility Card",
+                        value: "ZODIAC_COMPATIBILITY_CARD",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  sub_heading: {
+                    input_type: "TEXT_INPUT",
+                    value: "Zodiac Compatibility",
+                  },
+
+                  image: {
+                    input_type: "FILE_UPLOAD",
+                    value:
+                      "https://astro-page-14.vercel.app/imgs/birth-chart.svg",
+                    hidden: false,
+                  },
+                  content: {
+                    input_type: "RICH_TEXTAREA",
+                    value:
+                      "Curious about your cosmic connections? Our Zodiac Compatibility Chart holds the key to understanding the dynamics of your relationships. Whether you're seeking insights into romantic partnerships, friendships, or family dynamics, our Compatibility Chart offers personalised analysis and guidance.",
                   },
                   radius: {
                     input_type: "SELECT",
@@ -750,31 +1376,198 @@ const pageSection = [
           },
         },
       },
+      {
+        id: 4,
+        type: "BUTTON",
+        label: "Button",
+        props: {
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Hero Alom",
+            hidden: false,
+          },
+          animation: {
+            input_type: "SELECT",
+            value: "pulse",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "pulse",
+                value: "pulse",
+              },
+              {
+                label: "bounce",
+                value: "bounce",
+              },
+            ],
+            hidden: false,
+          },
+          color: {
+            input_type: "COLOR_PICKER",
+            value: "none",
+            hidden: false,
+          },
+
+          radius: {
+            input_type: "SELECT",
+            value: "square",
+            options: [
+              {
+                label: "Square",
+                value: "square",
+              },
+              {
+                label: "Rounded",
+                value: "rounded",
+              },
+              {
+                label: "Pill",
+                value: "pill",
+              },
+            ],
+            hidden: false,
+          },
+          shadow_size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+          shadow_color: {
+            input_type: "COLOR_PICKER",
+            value: "#d63031",
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "lg",
+            options: [
+              {
+                label: "Extra small",
+                value: "xs",
+              },
+              {
+                label: "Small",
+                value: "sm",
+              },
+              {
+                label: "Medium",
+                value: "md",
+              },
+              {
+                label: "Large",
+                value: "lg",
+              },
+            ],
+            hidden: false,
+          },
+          tone: {
+            input_type: "SELECT",
+            value: "outline",
+            options: [
+              {
+                label: "Solid",
+                value: "solid",
+              },
+              {
+                label: "Light",
+                value: "light",
+              },
+              {
+                label: "Outline",
+                value: "outline",
+              },
+              {
+                label: "Transparent",
+                value: "transparent",
+              },
+            ],
+            hidden: false,
+          },
+          target: {
+            input_type: "SELECT",
+            value: "self",
+            options: [
+              {
+                label: "Current Tab",
+                value: "self",
+              },
+              {
+                label: "New Tab",
+                value: "blank",
+              },
+            ],
+            hidden: false,
+          },
+          action: {
+            input_type: "ACTION_BUTTON",
+            value: "transit-chart",
+            hidden: false,
+          },
+        },
+      },
     ],
   },
   {
     type: "GRIDS",
     id: "grids",
-    label: "Additional Grid Calculators",
+    label: "Dynamic Grid Card Calculators",
     config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
       style: {
-        type: "default",
+        type: "grids_style_one",
         value: "",
       },
     },
     variants: {
-      default: {
-        label: "Default",
-        value: "default",
+      grids_style_one: {
+        label: "Grid Cards Style 1",
+        value: "grids_style_one",
         allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
       },
-      gridCardsStyleTwo: {
-        label: "Grid Cards Style Two",
-        value: "gridCardsStyleTwo",
+      grids_style_two: {
+        label: "Grid Cards Style 2",
+        value: "grids_style_two",
         allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
+      },
+      grids_style_three: {
+        label: "Grid Cards Style 3",
+        value: "grids_style_three",
+        allowedComponents: ["HEADLINE", "CARDS", "BUTTON"],
       },
     },
-    currentVariant: "default",
+    currentVariant: "grids_style_one",
     components: [
       {
         id: 1,
@@ -784,578 +1577,7 @@ const pageSection = [
           content: {
             input_type: "RICH_TEXTAREA",
             value:
-              "Find answers to your questions about your love, relationships, career, wellness and more.",
-          },
-        },
-      },
-      {
-        id: 2,
-        type: "CARDS",
-        label: "Cards",
-        props: {
-          items: {
-            input_type: "CARDS",
-            card_limit: 3,
-            card_length: 1,
-            value: [
-              {
-                type: "CARD",
-                label: "Card 1",
-                props: {
-                  card_type: {
-                    input_type: "SELECT",
-                    value: "CARD",
-                    options: [
-                      {
-                        label: "Default",
-                        value: "CARD",
-                      },
-                      {
-                        label: "Horoscope Card",
-                        value: "HOROSCOPE_CARD",
-                      },
-                      {
-                        label: "Icon Card",
-                        value: "ICON_CARD",
-                      },
-                      {
-                        label: "Zodiac Compatibility Card",
-                        value: "ZODIAC_COMPATIBILITY_CARD",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  heading: {
-                    input_type: "TEXT_INPUT",
-                    value: "Yes/No Tarot Predictions",
-                  },
-                  image: {
-                    input_type: "TEXT_INPUT",
-                    value: "/imgs/yes-no-tarot.png",
-                  },
-                  button_disaply: {
-                    value: true,
-                  },
-                  button_text: {
-                    input_type: "TEXT_INPUT",
-                    value: "Pick up a card and get an answer",
-                    hidden: false,
-                  },
-                  button_radius: {
-                    input_type: "SELECT",
-                    value: "rounded",
-                    hidden: false,
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
-                  },
-                  radius: {
-                    input_type: "SELECT",
-                    value: "none",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
-                  },
-                  shadow_size: {
-                    input_type: "SELECT",
-                    value: "base",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "base",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  button_color: {
-                    input_type: "SELECT",
-                    value: "white",
-                  },
-
-                  card_color: {
-                    value:
-                      "linear-gradient(220.55deg, #7CF7FF 0%, #4B73FF 100%)",
-                  },
-                  action: {
-                    input_type: "ACTION_BUTTON",
-                    value: "transit-chart",
-                    hidden: false,
-                  },
-                  animation: {
-                    value: "none",
-                  },
-
-                  target: {
-                    input_type: "RADIO_BUTTON",
-                    value: "self",
-                    options: [
-                      {
-                        label: "Current Tab",
-                        value: "self",
-                      },
-                      {
-                        label: "New Tab",
-                        value: "blank",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                },
-              },
-              {
-                type: "CARD",
-                label: "Card 2",
-                props: {
-                  card_type: {
-                    input_type: "SELECT",
-                    value: "CARD",
-                    options: [
-                      {
-                        label: "Default",
-                        value: "CARD",
-                      },
-                      {
-                        label: "Horoscope Card",
-                        value: "HOROSCOPE_CARD",
-                      },
-                      {
-                        label: "Icon Card",
-                        value: "ICON_CARD",
-                      },
-                      {
-                        label: "Zodiac Compatibility Card",
-                        value: "ZODIAC_COMPATIBILITY_CARD",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  sub_heading: {
-                    input_type: "TEXT_INPUT",
-                    value: "Choose your Sun Sign based on your date of birth.",
-                  },
-                  button_text: {
-                    input_type: "TEXT_INPUT",
-                    value: "Get Your Horoscope",
-                    hidden: false,
-                  },
-                  button_radius: {
-                    input_type: "SELECT",
-                    value: "rounded",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
-                    hidden: false,
-                  },
-
-                  color: {
-                    input_type: "",
-                    value:
-                      "linear-gradient(220.55deg, #8A88FB 0%, #D079EE 100%)",
-                  },
-                  radius: {
-                    input_type: "SELECT",
-                    value: "none",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
-                  },
-                  shadow_size: {
-                    input_type: "SELECT",
-                    value: "base",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "base",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  button_target: {
-                    input_type: "RADIO_BUTTON",
-                    value: "self",
-                    options: [
-                      {
-                        label: "Current Tab",
-                        value: "self",
-                      },
-                      {
-                        label: "New Tab",
-                        value: "blank",
-                      },
-                    ],
-
-                    hidden: false,
-                  },
-                  button_action: {
-                    input_type: "TEXT_INPUT",
-                    value: "/demo",
-                    hidden: false,
-                  },
-                },
-              },
-              {
-                type: "CARD",
-                label: "Card 3",
-                props: {
-                  card_type: {
-                    input_type: "SELECT",
-                    value: "CARD",
-                    options: [
-                      {
-                        label: "Default",
-                        value: "CARD",
-                      },
-                      {
-                        label: "Horoscope Card",
-                        value: "HOROSCOPE_CARD",
-                      },
-                      {
-                        label: "Icon Card",
-                        value: "ICON_CARD",
-                      },
-                      {
-                        label: "Zodiac Compatibility Card",
-                        value: "ZODIAC_COMPATIBILITY_CARD",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  sub_heading: {
-                    input_type: "TEXT_INPUT",
-                    value:
-                      "Find out your Zodiac compatibility and Love Intrest",
-                  },
-                  button_text: {
-                    input_type: "TEXT_INPUT",
-                    value: "your Zodiac Compatibility Report",
-                    hidden: false,
-                  },
-                  button_radius: {
-                    input_type: "SELECT",
-                    value: "rounded",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "base",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  radius: {
-                    input_type: "SELECT",
-                    value: "none",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
-                  },
-                  shadow_size: {
-                    input_type: "SELECT",
-                    value: "base",
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "base",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                    ],
-                    hidden: false,
-                  },
-                  button_target: {
-                    input_type: "RADIO_BUTTON",
-                    value: "self",
-                    options: [
-                      {
-                        label: "Current Tab",
-                        value: "self",
-                      },
-                      {
-                        label: "New Tab",
-                        value: "blank",
-                      },
-                    ],
-
-                    hidden: false,
-                  },
-                  button_action: {
-                    input_type: "TEXT_INPUT",
-                    value: "/demo",
-                    hidden: false,
-                  },
-
-                  card_color: {
-                    input_type: "",
-                    value:
-                      "linear-gradient(220.55deg, #FF896D 0%, #D02020 100%)",
-                  },
-                },
-              },
-            ],
-          },
-        },
-      },
-      {
-        id: 3,
-        type: "HEADLINE",
-        label: "Headline",
-        props: {
-          content: {
-            input_type: "RICH_TEXTAREA",
-            value: "Cosmic Compass",
-            hidden: false,
+              "Prepare to delve into the fascinating realm of the stars and unlock the secrets they hold. Embark on a personal astrology exploration today and experience a transformative cosmic adventure that will shed light on your path, like a steadfast guiding North Star.",
           },
           size: {
             input_type: "SELECT",
@@ -1387,79 +1609,6 @@ const pageSection = [
               },
             ],
             hidden: false,
-          },
-          variant: {
-            input_type: "SELECT",
-            value: "h5",
-            options: [
-              {
-                label: "h1",
-                value: "h1",
-              },
-              {
-                label: "h2",
-                value: "h2",
-              },
-              {
-                label: "h3",
-                value: "h3",
-              },
-              {
-                label: "h4",
-                value: "h4",
-              },
-              {
-                label: "h5",
-                value: "h5",
-              },
-              {
-                label: "h6",
-                value: "h6",
-              },
-              {
-                label: "paragraph",
-                value: "p",
-              },
-            ],
-            hidden: false,
-          },
-        },
-      },
-    ],
-  },
-  {
-    type: "GRIDS",
-    id: "grids",
-    label: "Grid Calculators",
-    config: {
-      style: {
-        type: "default",
-        value: "",
-      },
-    },
-    variants: {
-      default: {
-        label: "Default",
-        value: "default",
-        allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
-      },
-      gridCardsStyleTwo: {
-        label: "Grid Cards Style Two",
-        value: "gridCardsStyleTwo",
-        allowedComponents: ["CONTENT", "HEADLINE", "CARDS"],
-      },
-    },
-    currentVariant: "default",
-    components: [
-      {
-        id: 1,
-        type: "CONTENT",
-        label: "Content",
-        props: {
-          content: {
-            input_type: "RICH_TEXTAREA",
-            value:
-              "The power of the stars at your fingertips. From calculating your rising sign and moon phase to determining planetary transits and compatibility scores, our astrology calculators offer practical insights and invaluable guidance. Navigate the cosmos with ease and discover the magic of self-discovery through our range of free astrology calculators.",
           },
         },
       },
@@ -1500,60 +1649,22 @@ const pageSection = [
                     ],
                     hidden: false,
                   },
-                  heading: {
+
+                  sub_heading: {
                     input_type: "TEXT_INPUT",
-                    value: "Free Natal (Birth) Chart Report",
+                    value: "Free Personal Horoscope",
                   },
-                  button_disaply: {
-                    value: true,
-                  },
-                  button_text: {
-                    input_type: "TEXT_INPUT",
-                    value: "Calculate your birth chart",
+
+                  image: {
+                    input_type: "FILE_UPLOAD",
+                    value:
+                      "https://astro-page-14.vercel.app/imgs/birth-chart.svg",
                     hidden: false,
                   },
-                  button_radius: {
-                    input_type: "SELECT",
-                    value: "rounded",
-                    hidden: false,
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
+                  content: {
+                    input_type: "RICH_TEXTAREA",
+                    value:
+                      "Discover the cosmic energies that shape your day and get clear guidance, inspiration, and a sprinkle of magic to navigate life's twists and turns. With a 100% personalised touch, your daily horoscope becomes a cherished roadmap, helping you make the most of every moment and harness the power of the stars.",
                   },
                   radius: {
                     input_type: "SELECT",
@@ -1628,22 +1739,8 @@ const pageSection = [
                     ],
                     hidden: false,
                   },
-                  button_color: {
-                    input_type: "SELECT",
-                    value: "white",
-                  },
-                  image: {
-                    input_type: "FILE_UPLOAD",
-                    value: "/imgs/birthChart.png",
-                    hidden: false,
-                  },
-
-                  card_color: {
-                    value:
-                      "linear-gradient(to top,rgba(190,24,93,.8), #fef9c3)",
-                  },
                   target: {
-                    input_type: "RADIO_BUTTON",
+                    input_type: "SELECT",
                     value: "self",
                     options: [
                       {
@@ -1696,65 +1793,21 @@ const pageSection = [
                     ],
                     hidden: false,
                   },
-                  heading: {
+                  sub_heading: {
                     input_type: "TEXT_INPUT",
-                    value: "Life Path Number",
+                    value: "Natal Chart",
+                  },
+
+                  image: {
+                    input_type: "FILE_UPLOAD",
+                    value:
+                      "https://astro-page-14.vercel.app/imgs/birth-chart.svg",
+                    hidden: false,
                   },
                   content: {
+                    input_type: "RICH_TEXTAREA",
                     value:
-                      "Unveil the cosmic essence of your unique existence by calculating your Life Path Number, a powerful indicator of your life's purpose and destiny.",
-                  },
-                  border_display: {
-                    value: true,
-                  },
-                  border_width: {
-                    value: "medium",
-                  },
-                  border_color: {
-                    value: "",
-                  },
-                  button_radius: {
-                    input_type: "SELECT",
-                    value: "rounded",
-                    hidden: false,
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
+                      "Your natal (or birth) chart is a cosmic snapshot, capturing the precise arrangement of planets and constellations at the moment of your birth. Our expert astrologers decode this celestial map, revealing valuable insights into your personality, talents, and life's patterns. Gain a profound understanding of yourself and unleash your true potential. ",
                   },
                   radius: {
                     input_type: "SELECT",
@@ -1830,7 +1883,7 @@ const pageSection = [
                     hidden: false,
                   },
                   target: {
-                    input_type: "RADIO_BUTTON",
+                    input_type: "SELECT",
                     value: "self",
                     options: [
                       {
@@ -1883,65 +1936,21 @@ const pageSection = [
                     ],
                     hidden: false,
                   },
-                  heading: {
+                  sub_heading: {
                     input_type: "TEXT_INPUT",
-                    value: "Life Path Number",
+                    value: "Zodiac Compatibility",
+                  },
+
+                  image: {
+                    input_type: "FILE_UPLOAD",
+                    value:
+                      "https://astro-page-14.vercel.app/imgs/birth-chart.svg",
+                    hidden: false,
                   },
                   content: {
+                    input_type: "RICH_TEXTAREA",
                     value:
-                      "Unveil the cosmic essence of your unique existence by calculating your Life Path Number, a powerful indicator of your life's purpose and destiny.",
-                  },
-                  border_display: {
-                    value: true,
-                  },
-                  border_width: {
-                    value: "medium",
-                  },
-                  border_color: {
-                    value: "",
-                  },
-                  button_radius: {
-                    input_type: "SELECT",
-                    value: "rounded",
-                    hidden: false,
-                    options: [
-                      {
-                        label: "none",
-                        value: "none",
-                      },
-                      {
-                        label: "sm",
-                        value: "sm",
-                      },
-                      {
-                        label: "normal",
-                        value: "base",
-                      },
-                      {
-                        label: "md",
-                        value: "md",
-                      },
-                      {
-                        label: "lg",
-                        value: "lg",
-                      },
-                      {
-                        label: "xl",
-                        value: "xl",
-                      },
-                      {
-                        label: "2xl",
-                        value: "2xl",
-                      },
-                      {
-                        label: "3xl",
-                        value: "3xl",
-                      },
-                      {
-                        label: "full",
-                        value: "full",
-                      },
-                    ],
+                      "Curious about your cosmic connections? Our Zodiac Compatibility Chart holds the key to understanding the dynamics of your relationships. Whether you're seeking insights into romantic partnerships, friendships, or family dynamics, our Compatibility Chart offers personalised analysis and guidance.",
                   },
                   radius: {
                     input_type: "SELECT",
@@ -2017,7 +2026,7 @@ const pageSection = [
                     hidden: false,
                   },
                   target: {
-                    input_type: "RADIO_BUTTON",
+                    input_type: "SELECT",
                     value: "self",
                     options: [
                       {
@@ -2054,9 +2063,41 @@ const pageSection = [
         props: {
           content: {
             input_type: "RICH_TEXTAREA",
-            value: "Free Astro Tools",
+            value: "Unlock the Secrets of Your Destiny with AstrologyPulse",
             hidden: false,
           },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+
           variant: {
             input_type: "SELECT",
             value: "h5",
@@ -2092,7 +2133,63 @@ const pageSection = [
             ],
             hidden: false,
           },
-          size: {
+        },
+      },
+      {
+        id: 4,
+        type: "BUTTON",
+        label: "Button",
+        props: {
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Hero Alom",
+            hidden: false,
+          },
+          animation: {
+            input_type: "SELECT",
+            value: "pulse",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "pulse",
+                value: "pulse",
+              },
+              {
+                label: "bounce",
+                value: "bounce",
+              },
+            ],
+            hidden: false,
+          },
+          color: {
+            input_type: "COLOR_PICKER",
+            value: "none",
+            hidden: false,
+          },
+
+          radius: {
+            input_type: "SELECT",
+            value: "square",
+            options: [
+              {
+                label: "Square",
+                value: "square",
+              },
+              {
+                label: "Rounded",
+                value: "rounded",
+              },
+              {
+                label: "Pill",
+                value: "pill",
+              },
+            ],
+            hidden: false,
+          },
+          shadow_size: {
             input_type: "SELECT",
             value: "base",
             options: [
@@ -2123,53 +2220,138 @@ const pageSection = [
             ],
             hidden: false,
           },
+          shadow_color: {
+            input_type: "COLOR_PICKER",
+            value: "#d63031",
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "lg",
+            options: [
+              {
+                label: "Extra small",
+                value: "xs",
+              },
+              {
+                label: "Small",
+                value: "sm",
+              },
+              {
+                label: "Medium",
+                value: "md",
+              },
+              {
+                label: "Large",
+                value: "lg",
+              },
+            ],
+            hidden: false,
+          },
+          tone: {
+            input_type: "SELECT",
+            value: "outline",
+            options: [
+              {
+                label: "Solid",
+                value: "solid",
+              },
+              {
+                label: "Light",
+                value: "light",
+              },
+              {
+                label: "Outline",
+                value: "outline",
+              },
+              {
+                label: "Transparent",
+                value: "transparent",
+              },
+            ],
+            hidden: false,
+          },
+          target: {
+            input_type: "SELECT",
+            value: "self",
+            options: [
+              {
+                label: "Current Tab",
+                value: "self",
+              },
+              {
+                label: "New Tab",
+                value: "blank",
+              },
+            ],
+            hidden: false,
+          },
+          action: {
+            input_type: "ACTION_BUTTON",
+            value: "transit-chart",
+            hidden: false,
+          },
         },
       },
     ],
   },
   {
-    type: "SPLIT",
+    type: "SPLIT_SECTION",
     id: "split-section",
     label: "Split Section 1",
     config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
       style: {
-        type: "ContentImageRight",
+        type: "split_section_style_seven",
         value: "",
       },
     },
     variants: {
-      ContentImageRight: {
-        label: "Default",
-        value: "ContentImageRight",
+      split_section_style_one: {
+        label: "Split Section Style 1",
+        value: "split_section_style_one",
         allowedComponents: ["CONTENT", "IMAGE"],
       },
-      ContentImageLeft: {
-        label: "Content Image Left",
-        value: "ContentImageLeft",
+      split_section_style_two: {
+        label: "Split Section Style 2",
+        value: "split_section_style_two",
         allowedComponents: ["CONTENT", "IMAGE"],
       },
-      HeadlineContentImageLeft: {
-        label: "Headline Content Image Left",
-        value: "HeadlineContentImageLeft",
+      split_section_style_three: {
+        label: "Split Section Style 3",
+        value: "split_section_style_three",
         allowedComponents: ["HEADLINE", "CONTENT", "IMAGE"],
       },
-      HeadlineContentImageRight: {
-        label: "Headline Content Image Right",
-        value: "HeadlineContentImageRight",
-        allowedComponents: ["HEADLINE", "PARAGRAPH", "IMAGE"],
+      split_section_style_four: {
+        label: "Split Section Style 4",
+        value: "split_section_style_four",
+        allowedComponents: ["HEADLINE", "CONTENT", "IMAGE"],
       },
-      HeadlineContentButtonImageLeft: {
-        label: "Headline Content Button Image Left",
-        value: "HeadlineContentButtonImageLeft",
+      split_section_style_five: {
+        label: "Split Section Style 5",
+        value: "split_section_style_five",
         allowedComponents: ["HEADLINE", "CONTENT", "IMAGE", "BUTTON"],
       },
-      HeadlineContentButtonImageRight: {
-        label: "Headline Content Button Image Right",
-        value: "HeadlineContentButtonImageRight",
+      split_section_style_six: {
+        label: "Split Section Style 6",
+        value: "split_section_style_six",
         allowedComponents: ["HEADLINE", "CONTENT", "IMAGE", "BUTTON"],
+      },
+      split_section_style_seven: {
+        label: "Split Section Style 7",
+        value: "split_section_style_seven",
+        allowedComponents: ["IMAGE", "CARDS"],
+      },
+      split_section_style_eight: {
+        label: "Split Section Style 8",
+        value: "split_section_style_eight",
+        allowedComponents: ["IMAGE", "CARDS"],
       },
     },
-    currentVariant: "ContentImageRight",
+    currentVariant: "split_section_style_seven",
     components: [
       {
         id: 1,
@@ -2375,7 +2557,7 @@ const pageSection = [
           },
           animation: {
             input_type: "SELECT",
-            value: "bounce",
+            value: "pulse",
             options: [
               {
                 label: "none",
@@ -2394,7 +2576,7 @@ const pageSection = [
           },
           color: {
             input_type: "COLOR_PICKER",
-            value: "#00b894",
+            value: "none",
             hidden: false,
           },
           disabled: {
@@ -2567,7 +2749,6 @@ const pageSection = [
             ],
             hidden: false,
           },
-
           action: {
             input_type: "ACTION_BUTTON",
             value: "transit-chart",
@@ -2582,7 +2763,7 @@ const pageSection = [
         props: {
           content: {
             input_type: "RICH_TEXTAREA",
-            value: "<p>What is Lorem Ipsum?</p>",
+            value: "<p>What is Lorem Ipsum$35</p>",
             hidden: false,
           },
           weight: {
@@ -2667,142 +2848,181 @@ const pageSection = [
       },
       {
         id: 5,
-        type: "VIDEO",
-        label: "Video",
+        type: "CARDS",
+        label: "Cards",
         props: {
-          src: {
-            input_type: "TEXT_INPUT",
-            value: "https://www.youtube.com/",
-            hidden: false,
-          },
-          thumbnail: {
-            input_type: "TEXT_INPUT",
-            value: "sdg",
-            hidden: false,
-          },
-          alt: {
-            input_type: "TEXT_INPUT",
-            value: "some text",
-            hidden: false,
-          },
-          caption: {
-            input_type: "TEXT_INPUT",
-            value: "sdsdgdsg",
-            hidden: false,
-          },
-          fit: {
-            input_type: "SELECT",
-            value: "contain",
-            options: [
+          items: {
+            input_type: "CARDS",
+            card_limit: 1,
+            card_length: 1,
+            value: [
               {
-                label: "none",
-                value: "none",
-              },
-              {
-                label: "contain",
-                value: "contain",
-              },
-              {
-                label: "cover",
-                value: "cover",
-              },
-              {
-                label: "fill",
-                value: "fill",
-              },
-              {
-                label: "scale down",
-                value: "scale-down",
+                type: "CARD",
+                label: "Card 1",
+                props: {
+                  card_type: {
+                    input_type: "SELECT",
+                    value: "CARD",
+                    options: [
+                      {
+                        label: "Default",
+                        value: "CARD",
+                      },
+                      {
+                        label: "Horoscope Card",
+                        value: "HOROSCOPE_CARD",
+                      },
+                      {
+                        label: "Icon Card",
+                        value: "ICON_CARD",
+                      },
+                      {
+                        label: "Zodiac Compatibility Card",
+                        value: "ZODIAC_COMPATIBILITY_CARD",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  button_display: {
+                    input_type: "TOGGLE_BUTTON",
+                    value: true,
+                  },
+                  button_text: {
+                    input_type: "TEXT_INPUT",
+                    value: "Read More",
+                  },
+                  card_color: {
+                    input_type: "COLOR",
+                    value: "none",
+                  },
+                  align: {
+                    input_type: "SELECT",
+                    value: "left",
+                  },
+                  bordered: {
+                    input_type: "SELECT",
+                    value: "medium",
+                  },
+                  border_color: {
+                    input_type: "SELECT",
+                    value: "red",
+                  },
+                  border_display: {
+                    input_type: "TOGGLE_BUTTON",
+                    value: true,
+                  },
+
+                  sub_heading: {
+                    input_type: "TEXT_INPUT",
+                    value: "Free Personal Horoscope",
+                  },
+
+                  content: {
+                    input_type: "RICH_TEXTAREA",
+                    value:
+                      "Discover the cosmic energies that shape your day and get clear guidance, inspiration, and a sprinkle of magic to navigate life's twists and turns. With a 100% personalised touch, your daily horoscope becomes a cherished roadmap, helping you make the most of every moment and harness the power of the stars.",
+                  },
+                  radius: {
+                    input_type: "SELECT",
+                    value: "none",
+                    options: [
+                      {
+                        label: "none",
+                        value: "none",
+                      },
+                      {
+                        label: "sm",
+                        value: "sm",
+                      },
+                      {
+                        label: "normal",
+                        value: "base",
+                      },
+                      {
+                        label: "md",
+                        value: "md",
+                      },
+                      {
+                        label: "lg",
+                        value: "lg",
+                      },
+                      {
+                        label: "xl",
+                        value: "xl",
+                      },
+                      {
+                        label: "2xl",
+                        value: "2xl",
+                      },
+                      {
+                        label: "3xl",
+                        value: "3xl",
+                      },
+                      {
+                        label: "full",
+                        value: "full",
+                      },
+                    ],
+                  },
+                  shadow_size: {
+                    input_type: "SELECT",
+                    value: "base",
+                    options: [
+                      {
+                        label: "none",
+                        value: "none",
+                      },
+                      {
+                        label: "sm",
+                        value: "sm",
+                      },
+                      {
+                        label: "base",
+                        value: "base",
+                      },
+                      {
+                        label: "md",
+                        value: "md",
+                      },
+                      {
+                        label: "lg",
+                        value: "lg",
+                      },
+                      {
+                        label: "xl",
+                        value: "xl",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  target: {
+                    input_type: "SELECT",
+                    value: "self",
+                    options: [
+                      {
+                        label: "Current Tab",
+                        value: "self",
+                      },
+                      {
+                        label: "New Tab",
+                        value: "blank",
+                      },
+                    ],
+                    hidden: false,
+                  },
+                  link: {
+                    input_type: "TOGGLE_BUTTON",
+                    value: false,
+                    hidden: false,
+                  },
+                  action: {
+                    input_type: "ACTION_BUTTON",
+                    value: "/demo",
+                    hidden: false,
+                  },
+                },
               },
             ],
-            hidden: false,
-          },
-          radius: {
-            input_type: "SELECT",
-            value: "base",
-            options: [
-              {
-                label: "none",
-                value: "none",
-              },
-              {
-                label: "sm",
-                value: "sm",
-              },
-              {
-                label: "normal",
-                value: "base",
-              },
-              {
-                label: "md",
-                value: "md",
-              },
-              {
-                label: "lg",
-                value: "lg",
-              },
-              {
-                label: "xl",
-                value: "xl",
-              },
-              {
-                label: "2xl",
-                value: "2xl",
-              },
-              {
-                label: "3xl",
-                value: "3xl",
-              },
-              {
-                label: "full",
-                value: "full",
-              },
-            ],
-            hidden: false,
-          },
-          wrapper_class: {
-            input_type: "TEXT_INPUT",
-            value: "",
-            hidden: false,
-          },
-          position: {
-            input_type: "SELECT",
-            value: "center",
-            options: [
-              {
-                label: "none",
-                value: "none",
-              },
-              {
-                label: "center",
-                value: "center",
-              },
-              {
-                label: "top",
-                value: "top",
-              },
-              {
-                label: "bottom",
-                value: "bottom",
-              },
-              {
-                label: "left-bottom",
-                value: "left-bottom",
-              },
-              {
-                label: "left-top",
-                value: "left-top",
-              },
-              {
-                label: "right-top",
-                value: "right-top",
-              },
-              {
-                label: "right-bottom",
-                value: "right-bottom",
-              },
-            ],
-            hidden: false,
           },
         },
       },
@@ -2813,40 +3033,38 @@ const pageSection = [
     id: "birth-chart",
     label: "Birth Chart",
     config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
       style: {
-        type: "default",
+        type: "birth_chart_style_two",
         value: "",
       },
     },
     variants: {
-      default: {
-        label: "Default",
-        value: "default",
-        allowedComponents: [
-          "HEADLINE",
-          "CONTENT",
-          "BIRTH_CHART_FORM",
-          "BIRTH_CHART_FORM_RESPONSE",
-        ],
+      birth_chart_style_one: {
+        label: "Birth Chart Style 1",
+        value: "birth_chart_style_one",
+        allowedComponents: ["HEADLINE", "CONTENT", "BIRTH_CHART_FORM"],
       },
-      BirthChartStyleTwo: {
-        label: "Birth Chart With Image",
-        value: "BirthChartStyleTwo",
-        allowedComponents: [
-          "HEADLINE",
-          "CONTENT",
-          "BIRTH_CHART_FORM",
-          "BIRTH_CHART_FORM_RESPONSE",
-          "IMAGE",
-        ],
+      birth_chart_style_two: {
+        label: "Birth Chart Style 2",
+        value: "birth_chart_style_two",
+        allowedComponents: ["HEADLINE", "CONTENT", "BIRTH_CHART_FORM", "IMAGE"],
       },
-      BirthChartWithoutContent: {
-        label: "Birth Chart Without Content",
-        value: "BirthChartWithoutContent",
+      birth_chart_style_three: {
+        label: "Birth Chart Style 3",
+        value: "birth_chart_style_three",
         allowedComponents: ["BIRTH_CHART_FORM"],
       },
+      birth_chart_style_four: {
+        label: "Birth Chart Style 4",
+        value: "birth_chart_style_four",
+        allowedComponents: ["HEADLINE", "CONTENT", "BIRTH_CHART_FORM", "IMAGE"],
+      },
     },
-    currentVariant: "default",
+    currentVariant: "birth_chart_style_two",
     components: [
       {
         id: 1,
@@ -2998,67 +3216,2469 @@ const pageSection = [
         type: "BIRTH_CHART_FORM",
         label: "Birth Chart",
         props: {
+          form_style: {
+            input_type: "SELECT",
+            value: "default",
+            options: [
+              {
+                label: "Default Form Style",
+                value: "default",
+              },
+              {
+                label: "Form With Animated Border",
+                value: "stylishform",
+              },
+            ],
+            hidden: false,
+          },
           email_status: {
             input_type: "TOGGLE_BUTTON",
             value: true,
+            hidden: false,
           },
           label_status: {
             input_type: "TOGGLE_BUTTON",
             value: true,
+            hidden: false,
           },
           button_text: {
             input_type: "TEXT_INPUT",
             value: "Calculate Your Birth Chart",
+            hidden: false,
           },
           date_label: {
             input_type: "TEXT_INPUT",
             value: "Select Your Birth Date",
+            hidden: false,
           },
           name_label: {
             input_type: "TEXT_INPUT",
             value: "Enter Your Full Name",
+            hidden: false,
           },
           time_label: {
             input_type: "TEXT_INPUT",
             value: "Select Your Birth Time",
+            hidden: false,
           },
           place_label: {
             input_type: "TEXT_INPUT",
             value: "Select Your Birth Place",
+            hidden: false,
           },
           email_label: {
             input_type: "TEXT_INPUT",
             value: "Enter Your Email",
+            hidden: false,
+          },
+          button_action: {
+            input_type: "ACTION_BUTTON",
+            value: "",
+            hidden: false,
           },
         },
       },
       {
         id: 4,
-        type: "BIRTH_CHART_FORM_RESPONSE",
-        label: "Birth Chart Response",
+        type: "IMAGE",
+        label: " Image",
         props: {
-          response_type: {
+          src: {
+            input_type: "FILE_UPLOAD",
+            value:
+              "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
+            hidden: false,
+          },
+          alt: {
+            input_type: "TEXT_INPUT",
+            value: "hello",
+            hidden: false,
+          },
+          caption: {
+            input_type: "TEXT_INPUT",
+            value: "sdsdgdsg",
+            hidden: false,
+          },
+          fit: {
+            input_type: "SELECT",
+            value: "cover",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "contain",
+                value: "contain",
+              },
+              {
+                label: "cover",
+                value: "cover",
+              },
+              {
+                label: "fill",
+                value: "fill",
+              },
+              {
+                label: "scale down",
+                value: "scale-down",
+              },
+            ],
+            hidden: false,
+          },
+          radius: {
+            input_type: "SELECT",
+            value: "md",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "normal",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+              {
+                label: "2xl",
+                value: "2xl",
+              },
+              {
+                label: "3xl",
+                value: "3xl",
+              },
+              {
+                label: "full",
+                value: "full",
+              },
+            ],
+            hidden: false,
+          },
+          wrapper_class: {
+            input_type: "TEXT_INPUT",
+            value: "",
+            hidden: false,
+          },
+          position: {
+            input_type: "SELECT",
+            value: "top",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "center",
+                value: "center",
+              },
+              {
+                label: "top",
+                value: "top",
+              },
+              {
+                label: "bottom",
+                value: "bottom",
+              },
+              {
+                label: "left-bottom",
+                value: "left-bottom",
+              },
+              {
+                label: "left-top",
+                value: "left-top",
+              },
+              {
+                label: "right-top",
+                value: "right-top",
+              },
+              {
+                label: "right-bottom",
+                value: "right-bottom",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+    ],
+  },
+  {
+    type: "NUMEROLOGY",
+    id: "numerology",
+    label: "Numerology",
+    config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
+      style: {
+        type: "numerology_style_one",
+        value: "",
+      },
+    },
+    variants: {
+      numerology_style_one: {
+        label: "Numerology Style 1",
+        value: "numerology_style_one",
+        allowedComponents: ["HEADLINE", "CONTENT", "NUMEROLOGY_FORM"],
+      },
+      numerology_style_two: {
+        label: "Numerology Style 2",
+        value: "numerology_style_two",
+        allowedComponents: ["HEADLINE", "CONTENT", "NUMEROLOGY_FORM", "IMAGE"],
+      },
+      numerology_style_three: {
+        label: "Numerology Style 3",
+        value: "numerology_style_three",
+        allowedComponents: ["NUMEROLOGY_FORM"],
+      },
+      numerology_style_four: {
+        label: "Numerology Style 4",
+        value: "numerology_style_two",
+        allowedComponents: ["HEADLINE", "CONTENT", "NUMEROLOGY_FORM", "IMAGE"],
+      },
+      numerology_style_five: {
+        label: "Numerology Style 5",
+        value: "numerology_style_five",
+        allowedComponents: ["HEADLINE", "CONTENT", "NUMEROLOGY_FORM"],
+      },
+    },
+    currentVariant: "numerology_style_one",
+    components: [
+      {
+        id: 1,
+        type: "HEADLINE",
+        label: "Headline",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          variant: {
+            input_type: "SELECT",
+            value: "h5",
+            options: [
+              {
+                label: "h1",
+                value: "h1",
+              },
+              {
+                label: "h2",
+                value: "h2",
+              },
+              {
+                label: "h3",
+                value: "h3",
+              },
+              {
+                label: "h4",
+                value: "h4",
+              },
+              {
+                label: "h5",
+                value: "h5",
+              },
+              {
+                label: "h6",
+                value: "h6",
+              },
+              {
+                label: "paragraph",
+                value: "p",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 2,
+        type: "CONTENT",
+        label: "Content",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value:
+              "<p>Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 3,
+        type: "NUMEROLOGY_FORM",
+        label: "Numerology Form",
+        props: {
+          form_style: {
             input_type: "SELECT",
             value: "default",
             options: [
               {
-                label: "Default",
+                label: "Default Form Style",
                 value: "default",
               },
               {
-                label: "Tabbed",
-                value: "tab",
+                label: "Form With Animated Border",
+                value: "stylishform",
               },
             ],
+            hidden: false,
           },
-          response_headline: {
-            input_type: "RICHTEXT_AREA",
-            value: "Natal Chart",
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Calculate Your Birth Chart",
+            hidden: false,
           },
-          response_content_text: {
-            input_type: "RICHTEXT_AREA",
+          date_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Date",
+            hidden: false,
+          },
+          name_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Full Name",
+            hidden: false,
+          },
+          button_action: {
+            input_type: "ACTION_BUTTON",
+            value: "",
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 4,
+        type: "IMAGE",
+        label: " Image",
+        props: {
+          src: {
+            input_type: "FILE_UPLOAD",
             value:
-              "Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today",
+              "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
+            hidden: false,
+          },
+          alt: {
+            input_type: "TEXT_INPUT",
+            value: "hello",
+            hidden: false,
+          },
+          caption: {
+            input_type: "TEXT_INPUT",
+            value: "sdsdgdsg",
+            hidden: false,
+          },
+          fit: {
+            input_type: "SELECT",
+            value: "cover",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "contain",
+                value: "contain",
+              },
+              {
+                label: "cover",
+                value: "cover",
+              },
+              {
+                label: "fill",
+                value: "fill",
+              },
+              {
+                label: "scale down",
+                value: "scale-down",
+              },
+            ],
+            hidden: false,
+          },
+          radius: {
+            input_type: "SELECT",
+            value: "md",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "normal",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+              {
+                label: "2xl",
+                value: "2xl",
+              },
+              {
+                label: "3xl",
+                value: "3xl",
+              },
+              {
+                label: "full",
+                value: "full",
+              },
+            ],
+            hidden: false,
+          },
+          wrapper_class: {
+            input_type: "TEXT_INPUT",
+            value: "",
+            hidden: false,
+          },
+          position: {
+            input_type: "SELECT",
+            value: "top",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "center",
+                value: "center",
+              },
+              {
+                label: "top",
+                value: "top",
+              },
+              {
+                label: "bottom",
+                value: "bottom",
+              },
+              {
+                label: "left-bottom",
+                value: "left-bottom",
+              },
+              {
+                label: "left-top",
+                value: "left-top",
+              },
+              {
+                label: "right-top",
+                value: "right-top",
+              },
+              {
+                label: "right-bottom",
+                value: "right-bottom",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+    ],
+  },
+
+  {
+    type: "LIFEPATH_NUMBER_CALCULATOR",
+    id: "lifepath-number-calculator",
+    label: "Life Path Number Calculator",
+    config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
+      style: {
+        type: "lifepath_number_style_one",
+        value: "",
+      },
+    },
+    variants: {
+      lifepath_number_style_one: {
+        label: "Life Path Number Style 1",
+        value: "lifepath_number_style_one",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "LIFEPATH_NUMBER_CALCULATOR_FORM",
+        ],
+      },
+      lifepath_number_style_two: {
+        label: "Life Path Number Style 2",
+        value: "lifepath_number_style_two",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "LIFEPATH_NUMBER_CALCULATOR_FORM",
+          "IMAGE",
+        ],
+      },
+      lifepath_number_style_three: {
+        label: "Life Path Number Style 3",
+        value: "lifepath_number_style_three",
+        allowedComponents: ["LIFEPATH_NUMBER_CALCULATOR_FORM"],
+      },
+      lifepath_number_style_four: {
+        label: "Life Path Number Style 4",
+        value: "lifepath_number_style_four",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "LIFEPATH_NUMBER_CALCULATOR_FORM",
+          "IMAGE",
+        ],
+      },
+      lifepath_number_style_five: {
+        label: "Life Path Number Style 5",
+        value: "lifepath_number_style_five",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "LIFEPATH_NUMBER_CALCULATOR_FORM",
+        ],
+      },
+    },
+    currentVariant: "lifepath_number_style_one",
+    components: [
+      {
+        id: 1,
+        type: "HEADLINE",
+        label: "Headline",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+
+          variant: {
+            input_type: "SELECT",
+            value: "h5",
+            options: [
+              {
+                label: "h1",
+                value: "h1",
+              },
+              {
+                label: "h2",
+                value: "h2",
+              },
+              {
+                label: "h3",
+                value: "h3",
+              },
+              {
+                label: "h4",
+                value: "h4",
+              },
+              {
+                label: "h5",
+                value: "h5",
+              },
+              {
+                label: "h6",
+                value: "h6",
+              },
+              {
+                label: "paragraph",
+                value: "p",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 2,
+        type: "CONTENT",
+        label: "Content",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value:
+              "<p>Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 3,
+        type: "LIFEPATH_NUMBER_CALCULATOR_FORM",
+        label: "Life Path Number Calculator Form",
+        props: {
+          form_style: {
+            input_type: "SELECT",
+            value: "default",
+            options: [
+              {
+                label: "Default Form Style",
+                value: "default",
+              },
+              {
+                label: "Form With Animated Border",
+                value: "stylishform",
+              },
+            ],
+            hidden: false,
+          },
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Calculate Your Birth Chart",
+            hidden: false,
+          },
+          date_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Date",
+            hidden: false,
+          },
+          name_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Full Name",
+            hidden: false,
+          },
+          button_action: {
+            input_type: "ACTION_BUTTON",
+            value: "",
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 4,
+        type: "IMAGE",
+        label: "Image",
+        props: {
+          src: {
+            input_type: "FILE_UPLOAD",
+            value:
+              "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
+            hidden: false,
+          },
+          alt: {
+            input_type: "TEXT_INPUT",
+            value: "hello",
+            hidden: false,
+          },
+          caption: {
+            input_type: "TEXT_INPUT",
+            value: "sdsdgdsg",
+            hidden: false,
+          },
+          fit: {
+            input_type: "SELECT",
+            value: "cover",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "contain",
+                value: "contain",
+              },
+              {
+                label: "cover",
+                value: "cover",
+              },
+              {
+                label: "fill",
+                value: "fill",
+              },
+              {
+                label: "scale down",
+                value: "scale-down",
+              },
+            ],
+            hidden: false,
+          },
+          radius: {
+            input_type: "SELECT",
+            value: "md",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "normal",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+              {
+                label: "2xl",
+                value: "2xl",
+              },
+              {
+                label: "3xl",
+                value: "3xl",
+              },
+              {
+                label: "full",
+                value: "full",
+              },
+            ],
+            hidden: false,
+          },
+          wrapper_class: {
+            input_type: "TEXT_INPUT",
+            value: "",
+            hidden: false,
+          },
+          position: {
+            input_type: "SELECT",
+            value: "top",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "center",
+                value: "center",
+              },
+              {
+                label: "top",
+                value: "top",
+              },
+              {
+                label: "bottom",
+                value: "bottom",
+              },
+              {
+                label: "left-bottom",
+                value: "left-bottom",
+              },
+              {
+                label: "left-top",
+                value: "left-top",
+              },
+              {
+                label: "right-top",
+                value: "right-top",
+              },
+              {
+                label: "right-bottom",
+                value: "right-bottom",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+    ],
+  },
+  {
+    type: "PERSONALITY_NUMBER_CALCULATOR",
+    id: "personality-number-calculator",
+    label: "Personality Number Calculator",
+    config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
+      style: {
+        type: "personality_number_style_one",
+        value: "",
+      },
+    },
+    variants: {
+      personality_number_style_one: {
+        label: "Personality Number Style 1",
+        value: "personality_number_style_one",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "PERSONALITY_NUMBER_CALCULATOR_FORM",
+        ],
+      },
+      personality_number_style_two: {
+        label: "Personality Number Style 2",
+        value: "personality_number_style_two",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "PERSONALITY_NUMBER_CALCULATOR_FORM",
+          "IMAGE",
+        ],
+      },
+      personality_number_style_three: {
+        label: "Personality Number Style 3",
+        value: "personality_number_style_three",
+        allowedComponents: ["PERSONALITY_NUMBER_CALCULATOR_FORM"],
+      },
+      personality_number_style_four: {
+        label: "Personality Number Style 4",
+        value: "personality_number_style_four",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "PERSONALITY_NUMBER_CALCULATOR_FORM",
+          "IMAGE",
+        ],
+      },
+      personality_number_style_five: {
+        label: "Personality Number Style 5",
+        value: "personality_number_style_five",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "PERSONALITY_NUMBER_CALCULATOR_FORM",
+        ],
+      },
+    },
+    currentVariant: "personality_number_style_one",
+    components: [
+      {
+        id: 1,
+        type: "HEADLINE",
+        label: "Headline",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+
+          variant: {
+            input_type: "SELECT",
+            value: "h5",
+            options: [
+              {
+                label: "h1",
+                value: "h1",
+              },
+              {
+                label: "h2",
+                value: "h2",
+              },
+              {
+                label: "h3",
+                value: "h3",
+              },
+              {
+                label: "h4",
+                value: "h4",
+              },
+              {
+                label: "h5",
+                value: "h5",
+              },
+              {
+                label: "h6",
+                value: "h6",
+              },
+              {
+                label: "paragraph",
+                value: "p",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 2,
+        type: "CONTENT",
+        label: "Content",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value:
+              "<p>Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 3,
+        type: "PERSONALITY_NUMBER_CALCULATOR_FORM",
+        label: "Personality Number Calculator Form",
+        props: {
+          form_style: {
+            input_type: "SELECT",
+            value: "default",
+            options: [
+              {
+                label: "Default Form Style",
+                value: "default",
+              },
+              {
+                label: "Form With Animated Border",
+                value: "stylishform",
+              },
+            ],
+            hidden: false,
+          },
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Calculate Your Birth Chart",
+            hidden: false,
+          },
+          date_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Date",
+            hidden: false,
+          },
+          name_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Full Name",
+            hidden: false,
+          },
+          button_action: {
+            input_type: "ACTION_BUTTON",
+            value: "",
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 4,
+        type: "IMAGE",
+        label: "Image",
+        props: {
+          src: {
+            input_type: "FILE_UPLOAD",
+            value:
+              "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
+            hidden: false,
+          },
+          alt: {
+            input_type: "TEXT_INPUT",
+            value: "hello",
+            hidden: false,
+          },
+          caption: {
+            input_type: "TEXT_INPUT",
+            value: "sdsdgdsg",
+            hidden: false,
+          },
+          fit: {
+            input_type: "SELECT",
+            value: "cover",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "contain",
+                value: "contain",
+              },
+              {
+                label: "cover",
+                value: "cover",
+              },
+              {
+                label: "fill",
+                value: "fill",
+              },
+              {
+                label: "scale down",
+                value: "scale-down",
+              },
+            ],
+            hidden: false,
+          },
+          radius: {
+            input_type: "SELECT",
+            value: "md",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "normal",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+              {
+                label: "2xl",
+                value: "2xl",
+              },
+              {
+                label: "3xl",
+                value: "3xl",
+              },
+              {
+                label: "full",
+                value: "full",
+              },
+            ],
+            hidden: false,
+          },
+          wrapper_class: {
+            input_type: "TEXT_INPUT",
+            value: "",
+            hidden: false,
+          },
+          position: {
+            input_type: "SELECT",
+            value: "top",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "center",
+                value: "center",
+              },
+              {
+                label: "top",
+                value: "top",
+              },
+              {
+                label: "bottom",
+                value: "bottom",
+              },
+              {
+                label: "left-bottom",
+                value: "left-bottom",
+              },
+              {
+                label: "left-top",
+                value: "left-top",
+              },
+              {
+                label: "right-top",
+                value: "right-top",
+              },
+              {
+                label: "right-bottom",
+                value: "right-bottom",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+    ],
+  },
+  {
+    type: "EXPRESSION_CALCULATOR",
+    id: "expression-number-calculator",
+    label: "Expression Calculator",
+    config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
+      style: {
+        type: "expression_calculator_style_one",
+        value: "",
+      },
+    },
+    variants: {
+      expression_calculator_style_one: {
+        label: "Expression Calculator Style 1",
+        value: "expression_calculator_style_one",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "EXPRESSION_CALCULATOR_FORM",
+        ],
+      },
+      expression_calculator_style_two: {
+        label: "Expression Calculator Style 2",
+        value: "expression_calculator_style_two",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "EXPRESSION_CALCULATOR_FORM",
+          "IMAGE",
+        ],
+      },
+      expression_calculator_style_three: {
+        label: "Expression Calculator Style 3",
+        value: "expression_calculator_style_three",
+        allowedComponents: ["EXPRESSION_CALCULATOR_FORM"],
+      },
+      expression_calculator_style_four: {
+        label: "Expression Calculator Style 4",
+        value: "expression_calculator_style_four",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "EXPRESSION_CALCULATOR_FORM",
+          "IMAGE",
+        ],
+      },
+      expression_calculator_style_five: {
+        label: "Expression Calculator Style 5",
+        value: "expression_calculator_style_five",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "EXPRESSION_CALCULATOR_FORM",
+        ],
+      },
+    },
+    currentVariant: "expression_calculator_style_one",
+    components: [
+      {
+        id: 1,
+        type: "HEADLINE",
+        label: "Headline",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
+            hidden: false,
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          variant: {
+            input_type: "SELECT",
+            value: "h5",
+            options: [
+              {
+                label: "h1",
+                value: "h1",
+              },
+              {
+                label: "h2",
+                value: "h2",
+              },
+              {
+                label: "h3",
+                value: "h3",
+              },
+              {
+                label: "h4",
+                value: "h4",
+              },
+              {
+                label: "h5",
+                value: "h5",
+              },
+              {
+                label: "h6",
+                value: "h6",
+              },
+              {
+                label: "paragraph",
+                value: "p",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 2,
+        type: "CONTENT",
+        label: "Content",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value:
+              "<p>Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 3,
+        type: "EXPRESSION_CALCULATOR_FORM",
+        label: "Expression Calculator Form",
+        props: {
+          form_style: {
+            input_type: "SELECT",
+            value: "default",
+            options: [
+              {
+                label: "Default Form Style",
+                value: "default",
+              },
+              {
+                label: "Form With Animated Border",
+                value: "stylishform",
+              },
+            ],
+            hidden: false,
+          },
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Calculate Your Birth Chart",
+            hidden: false,
+          },
+          date_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Date",
+            hidden: false,
+          },
+          name_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Full Name",
+            hidden: false,
+          },
+          button_action: {
+            input_type: "ACTION_BUTTON",
+            value: "",
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 4,
+        type: "IMAGE",
+        label: " Image",
+        props: {
+          src: {
+            input_type: "FILE_UPLOAD",
+            value:
+              "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
+            hidden: false,
+          },
+          alt: {
+            input_type: "TEXT_INPUT",
+            value: "hello",
+            hidden: false,
+          },
+          caption: {
+            input_type: "TEXT_INPUT",
+            value: "sdsdgdsg",
+            hidden: false,
+          },
+          fit: {
+            input_type: "SELECT",
+            value: "cover",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "contain",
+                value: "contain",
+              },
+              {
+                label: "cover",
+                value: "cover",
+              },
+              {
+                label: "fill",
+                value: "fill",
+              },
+              {
+                label: "scale down",
+                value: "scale-down",
+              },
+            ],
+            hidden: false,
+          },
+          radius: {
+            input_type: "SELECT",
+            value: "md",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "normal",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+              {
+                label: "2xl",
+                value: "2xl",
+              },
+              {
+                label: "3xl",
+                value: "3xl",
+              },
+              {
+                label: "full",
+                value: "full",
+              },
+            ],
+            hidden: false,
+          },
+          wrapper_class: {
+            input_type: "TEXT_INPUT",
+            value: "",
+            hidden: false,
+          },
+          position: {
+            input_type: "SELECT",
+            value: "top",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "center",
+                value: "center",
+              },
+              {
+                label: "top",
+                value: "top",
+              },
+              {
+                label: "bottom",
+                value: "bottom",
+              },
+              {
+                label: "left-bottom",
+                value: "left-bottom",
+              },
+              {
+                label: "left-top",
+                value: "left-top",
+              },
+              {
+                label: "right-top",
+                value: "right-top",
+              },
+              {
+                label: "right-bottom",
+                value: "right-bottom",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+    ],
+  },
+  {
+    type: "SYNASTRY_CHART",
+    id: "synastry-chart",
+    label: "Solar Return Chart",
+    config: {
+      background: {
+        type: "COLOR",
+        value: "",
+      },
+      style: {
+        type: "synastry_chart_style_one",
+        value: "",
+      },
+    },
+    variants: {
+      synastry_chart_style_one: {
+        label: "Synastry Chart Style 1",
+        value: "synastry_chart_style_one",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "SYNASTRY_CHART_PRIMARY_FORM",
+          "SYNASTRY_CHART_SECONDARY_FORM",
+        ],
+      },
+      synastry_chart_style_two: {
+        label: "Synastry Chart Style 2",
+        value: "synastry_chart_style_two",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "SYNASTRY_CHART_PRIMARY_FORM",
+          "SYNASTRY_CHART_SECONDARY_FORM",
+
+          "IMAGE",
+        ],
+      },
+      synastry_chart_style_three: {
+        label: "Synastry Chart Style 3",
+        value: "synastry_chart_style_three",
+        allowedComponents: [
+          "SYNASTRY_CHART_PRIMARY_FORM",
+          "SYNASTRY_CHART_SECONDARY_FORM",
+        ],
+      },
+      synastry_chart_style_four: {
+        label: "Synastry Chart Style 4",
+        value: "synastry_chart_style_four",
+        allowedComponents: [
+          "HEADLINE",
+          "CONTENT",
+          "SYNASTRY_CHART_PRIMARY_FORM",
+          "SYNASTRY_CHART_SECONDARY_FORM",
+
+          "IMAGE",
+        ],
+      },
+    },
+    currentVariant: "synastry_chart_style_four",
+    components: [
+      {
+        id: 1,
+        type: "HEADLINE",
+        label: "Headline",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value: "<p style='color:#F39461;'>Birth Chart Calculator</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          variant: {
+            input_type: "SELECT",
+            value: "h5",
+            options: [
+              {
+                label: "h1",
+                value: "h1",
+              },
+              {
+                label: "h2",
+                value: "h2",
+              },
+              {
+                label: "h3",
+                value: "h3",
+              },
+              {
+                label: "h4",
+                value: "h4",
+              },
+              {
+                label: "h5",
+                value: "h5",
+              },
+              {
+                label: "h6",
+                value: "h6",
+              },
+              {
+                label: "paragraph",
+                value: "p",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 2,
+        type: "CONTENT",
+        label: "Content",
+        props: {
+          content: {
+            input_type: "RICH_TEXTAREA",
+            value:
+              "<p>Calculate the position of the planets at your birth and unlock the hidden patterns and potentials that shape your life's journey. Gain valuable insight into your purpose, personality, and opportunities for growth and transformation today</p>",
+          },
+          weight: {
+            input_type: "SELECT",
+            value: "light",
+            options: [
+              {
+                label: "thin",
+                value: "thin",
+              },
+              {
+                label: "extraLight",
+                value: "extraLight",
+              },
+              {
+                label: "light",
+                value: "light",
+              },
+              {
+                label: "normal",
+                value: "normal",
+              },
+              {
+                label: "medium",
+                value: "medium",
+              },
+              {
+                label: "semiBold",
+                value: "semiBold",
+              },
+              {
+                label: "bold",
+                value: "bold",
+              },
+              {
+                label: "extraBold",
+                value: "extraBold",
+              },
+              {
+                label: "black",
+                value: "black",
+              },
+            ],
+            hidden: false,
+          },
+          size: {
+            input_type: "SELECT",
+            value: "base",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "base",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+            ],
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 3,
+        type: "SYNASTRY_CHART_PRIMARY_FORM",
+        label: "Synastry Chart Primary Form",
+        props: {
+          form_style: {
+            input_type: "SELECT",
+            value: "default",
+            options: [
+              {
+                label: "Default Form Style",
+                value: "default",
+              },
+              {
+                label: "Form With Animated Border",
+                value: "stylishform",
+              },
+            ],
+            hidden: false,
+          },
+          email_status: {
+            input_type: "TOGGLE_BUTTON",
+            value: true,
+            hidden: false,
+          },
+          label_status: {
+            input_type: "TOGGLE_BUTTON",
+            value: true,
+            hidden: false,
+          },
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Calculate Your Birth Chart",
+            hidden: false,
+          },
+          date_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Date",
+            hidden: false,
+          },
+          name_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Full Name",
+            hidden: false,
+          },
+          time_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Time",
+            hidden: false,
+          },
+          place_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Place",
+            hidden: false,
+          },
+          email_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Email",
+            hidden: false,
+          },
+        },
+      },
+      {
+        id: 4,
+        type: "SYNASTRY_CHART_SECONDARY_FORM",
+        label: "Synastry Chart Secondary Form",
+        props: {
+          email_status: {
+            input_type: "TOGGLE_BUTTON",
+            value: true,
+            hidden: false,
+          },
+          label_status: {
+            input_type: "TOGGLE_BUTTON",
+            value: true,
+            hidden: false,
+          },
+          button_text: {
+            input_type: "TEXT_INPUT",
+            value: "Calculate Your Birth Chart",
+            hidden: false,
+          },
+          date_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Date",
+            hidden: false,
+          },
+          name_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Full Name",
+            hidden: false,
+          },
+          time_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Time",
+            hidden: false,
+          },
+          place_label: {
+            input_type: "TEXT_INPUT",
+            value: "Select Your Birth Place",
+            hidden: false,
+          },
+          email_label: {
+            input_type: "TEXT_INPUT",
+            value: "Enter Your Email",
+            hidden: false,
+          },
+          button_action: {
+            input_type: "ACTION_BUTTON",
+            value: "synastry-chart-response",
+            hidden: false,
+          },
+        },
+      },
+
+      {
+        id: 5,
+        type: "IMAGE",
+        label: "Image",
+        props: {
+          src: {
+            input_type: "FILE_UPLOAD",
+            value:
+              "https://astro-page-14.vercel.app/imgs/zodiacCompatibility.png",
+            hidden: false,
+          },
+          alt: {
+            input_type: "TEXT_INPUT",
+            value: "hello",
+            hidden: false,
+          },
+          caption: {
+            input_type: "TEXT_INPUT",
+            value: "sdsdgdsg",
+            hidden: false,
+          },
+          fit: {
+            input_type: "SELECT",
+            value: "cover",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "contain",
+                value: "contain",
+              },
+              {
+                label: "cover",
+                value: "cover",
+              },
+              {
+                label: "fill",
+                value: "fill",
+              },
+              {
+                label: "scale down",
+                value: "scale-down",
+              },
+            ],
+            hidden: false,
+          },
+          radius: {
+            input_type: "SELECT",
+            value: "md",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "sm",
+                value: "sm",
+              },
+              {
+                label: "normal",
+                value: "base",
+              },
+              {
+                label: "md",
+                value: "md",
+              },
+              {
+                label: "lg",
+                value: "lg",
+              },
+              {
+                label: "xl",
+                value: "xl",
+              },
+              {
+                label: "2xl",
+                value: "2xl",
+              },
+              {
+                label: "3xl",
+                value: "3xl",
+              },
+              {
+                label: "full",
+                value: "full",
+              },
+            ],
+            hidden: false,
+          },
+          wrapper_class: {
+            input_type: "TEXT_INPUT",
+            value: "",
+            hidden: false,
+          },
+          position: {
+            input_type: "SELECT",
+            value: "top",
+            options: [
+              {
+                label: "none",
+                value: "none",
+              },
+              {
+                label: "center",
+                value: "center",
+              },
+              {
+                label: "top",
+                value: "top",
+              },
+              {
+                label: "bottom",
+                value: "bottom",
+              },
+              {
+                label: "left-bottom",
+                value: "left-bottom",
+              },
+              {
+                label: "left-top",
+                value: "left-top",
+              },
+              {
+                label: "right-top",
+                value: "right-top",
+              },
+              {
+                label: "right-bottom",
+                value: "right-bottom",
+              },
+            ],
+            hidden: false,
           },
         },
       },
@@ -3066,19 +5686,20 @@ const pageSection = [
   },
 ];
 
-// export async function getStaticProps() {
-//   const getAndUpdateOrderDetail = async () => {
-//     const req = await DBEntry({
-//       url: `admin/page/homepage`,
-//       method: "GET",
-//     });
-//     return req;
-//   };
+export async function getStaticProps() {
+  const getAndUpdateOrderDetail = async () => {
+    const req = await DBEntry({
+      url: `admin/page/homepage`,
+      method: "GET",
+    });
+    return req;
+  };
 
-//   const data = await getAndUpdateOrderDetail();
-//   return {
-//     props: {
-//       pageSection: data?.success ? data?.response?.page_skeleton : {},
-//     },
-//   };
-// }
+  const data = await getAndUpdateOrderDetail();
+
+  return {
+    props: {
+      pageSection: data?.success ? data?.response?.page_skeleton?.sections : {},
+    },
+  };
+}
