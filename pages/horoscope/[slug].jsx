@@ -58,16 +58,16 @@ export default function HoroscopeSlug({ slug }) {
   };
 
   return (
-    <div className="pb-20">
+    <div className='pb-20'>
       {/*  tab ui  */}
-      <div className="flex flex-col w-full gap-10">
+      <div className='flex flex-col w-full gap-10'>
         <HoroscopeTopBar
           handleSign={handleSelectZodiac}
           sign={active.sign}
           time={active.time}
         />
-        <div className="max-w-6xl items-start w-full px-5 md:gap-20 gap-14 mx-auto flex md:flex-row flex-col">
-          <div className="w-full overflow-hidden flex flex-col gap-10">
+        <div className='max-w-6xl items-start w-full px-5 md:gap-20 gap-14 mx-auto flex md:flex-row flex-col'>
+          <div className='w-full overflow-hidden flex flex-col gap-10'>
             <HoroscopeTab
               active={active.time}
               handleTime={handleTime}
@@ -95,7 +95,7 @@ export default function HoroscopeSlug({ slug }) {
                   ) : (
                     <>
                       {Object.keys(response).length !== 0 && !loader ? (
-                        <div className="flex flex-col gap-10">
+                        <div className='flex flex-col gap-10'>
                           <CommonCardPage data={response} />
                         </div>
                       ) : (
@@ -108,8 +108,7 @@ export default function HoroscopeSlug({ slug }) {
             </>
           </div>
           <div
-            className={`w-full md:max-w-[320px]  flex flex-col md:mt-24  gap-10 md:gap-14`}
-          >
+            className={`w-full md:max-w-[320px]  flex flex-col md:mt-24  gap-10 md:gap-14`}>
             {/* <div className="flex text-center flex-col gap-5 bg-gradient-to-b from-pink-300 to-pink-400 text-white px-5 py-8 rounded">
               <h6 className="md:text-2xl text-xl font-semibold ">
                 Are you and your love interest meant to be?
