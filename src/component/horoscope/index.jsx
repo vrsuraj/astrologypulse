@@ -6,68 +6,7 @@ import { findComponent } from "@/utils/arrayFunc";
 import SectionStyle from "../globalStyle/sectionStyle";
 import Text from "../text";
 import Paragraph from "../paragraph";
-export const horoscope = [
-  {
-    name: "Aries",
-    date: "MAR 21 - APR 20",
-    img: "a",
-  },
-  {
-    name: "Taurus",
-    date: "APR 21 - MAY 21",
-    img: "b",
-  },
-  {
-    name: "Gemini",
-    date: "MAY 22 -JUN 21",
-    img: "c",
-  },
-  {
-    name: "Cancer",
-    date: "JUN 22 - JUL 22",
-    img: "d",
-  },
-  {
-    name: "Leo",
-    date: "JUL 23 - AUG 21",
-    img: "e",
-  },
-  {
-    name: "Virgo",
-    date: "AUG 22 - SEP 23",
-    img: "f",
-  },
-  {
-    name: "Libra",
-    date: "SEP 24 - OCT 23",
-    img: "g",
-  },
-  {
-    name: "Scorpio",
-    date: "OCT 24 - NOV 22",
-    img: "h",
-  },
-  {
-    name: "Sagittarius",
-    date: "NOV 23 - DEC 22",
-    img: "i",
-  },
-  {
-    name: "Capricorn",
-    date: "DEC 23 - JAN 20",
-    img: "j",
-  },
-  {
-    name: "Aquarius",
-    date: "JAN 21 - FEB 19",
-    img: "k",
-  },
-  {
-    name: "Pisces",
-    date: "FEB 20 - MAR 20",
-    img: "l",
-  },
-];
+import horoscope from "../../../jsondata/horoscopeSign";
 
 export default function HoroscopeCalculator({ data }) {
   const allowedComponents =
