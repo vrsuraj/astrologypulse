@@ -9,10 +9,8 @@ import Button from "@/src/component/button/index2";
 export function getLayout(variant: string | undefined) {
   switch (variant) {
     case "cta_style_one":
-    case "cta_style_two":
       return "flex-col justify-between md:flex-row gap-10 md:items-center";
-    case "cta_style_three":
-    case "cta_style_four":
+    case "cta_style_two":
       return "flex-col items-center justify-center text-center md:gap-10 gap-5";
   }
 }

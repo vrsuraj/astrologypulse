@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "react-bootstrap-typeahead/css/Typeahead.css";
 import { AsyncTypeahead } from "react-bootstrap-typeahead";
 const country = require("@/jsondata/country.json");
-const style = require("@/styles/Home.module.css");
+import style from "@/styles/Home.module.css";
 import { getSelectStyle } from "./commonInput";
 
 const api = "https://geo.vedicrishi.in/places";
@@ -64,14 +64,14 @@ export default function Sample(props) {
 
   return (
     <div className="w-full items-end flex flex-grow gap-5 sm:flex-row flex-col ">
-      <div className="w-full sm:w-2/5">
+      <div className="w-full  md:w-2/5">
         <select
           onChange={handlecountry}
           name="country"
           defaultValue={selectedcountry}
           className={`${getSelectStyle(props.type, props.style)} ${
             style.select2
-          }`}
+          } w-full`}
         >
           {country.map((item, i) => (
             <option value={item.country_name} key={i}>
@@ -93,7 +93,7 @@ export default function Sample(props) {
             isLoading={Boolean(isLoading)}
             labelKey="name"
             minLength={3}
-            defaultSelected={props.defaulePlace}
+            defaultSelected={props.defaultPlace}
             onChange={handdleChange}
             onSearch={handleSearch}
             options={options}

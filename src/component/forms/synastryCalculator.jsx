@@ -23,7 +23,6 @@ export function getLayout(variant) {
 
 const DynamicForm = dynamic(() => import("./formWrapper"));
 export default function SynastryCalculator({ data }) {
-  console.log(data);
   const [femaleform, setfemaleform] = useState(false);
   const [userData, setUserdata] = useState({
     female: formInitialValue(),
@@ -79,13 +78,14 @@ export default function SynastryCalculator({ data }) {
 
   return (
     <div className={`flex flex-col gap-14 px-5 py-14`}>
-      <div className='max-w-3xl mx-auto  text-center flex flex-col gap-5'>
+      <div className="max-w-3xl mx-auto  text-center flex flex-col gap-5">
         {allowedComponents.includes("HEADLINE") && headlineComponent && (
           <Text
-            extra='!text-highlight !dark:text-hightlight'
+            extra="!text-highlight !dark:text-hightlight"
             size={"4xl"}
-            variant='h1'
-            weight={"semibold"}>
+            variant="h1"
+            weight={"semibold"}
+          >
             {headlineComponent?.props?.content?.value}
           </Text>
         )}
@@ -97,7 +97,8 @@ export default function SynastryCalculator({ data }) {
       </div>
 
       <div
-        className={`flex gap-10 max-w-6xl mx-auto items-center ${customLayout}`}>
+        className={`flex gap-10 max-w-6xl mx-auto items-center ${customLayout}`}
+      >
         <div className={`w-full  max-w-lg  p-[2px] mx-auto`}>
           {!femaleform ? (
             <>
@@ -117,12 +118,14 @@ export default function SynastryCalculator({ data }) {
                   synastrySecondaryFormComponent?.props?.formKeys?.email_status
                     ?.value
                 }
-                userData={userData?.female}>
+                userData={userData?.female}
+              >
                 <Text
-                  extra='!text-third !dark:text-third px-5 pt-5'
+                  extra="!text-third !dark:text-third px-5 pt-5"
                   size={"2xl"}
-                  variant='h1'
-                  weight={"semibold"}>
+                  variant="h1"
+                  weight={"semibold"}
+                >
                   {!femaleform
                     ? "Enter your details"
                     : "Enter your partner details"}
@@ -148,12 +151,14 @@ export default function SynastryCalculator({ data }) {
                   synastryPrimaryFormComponent?.props?.formKeys?.email_status
                     ?.value
                 }
-                userData={userData?.male}>
+                userData={userData?.male}
+              >
                 <Text
-                  extra='!text-third !dark:text-third px-5 pt-5'
+                  extra="!text-third !dark:text-third px-5 pt-5"
                   size={"2xl"}
-                  variant='h1'
-                  weight={"semibold"}>
+                  variant="h1"
+                  weight={"semibold"}
+                >
                   {!femaleform
                     ? "Enter your details"
                     : "Enter your partner details"}
@@ -170,7 +175,8 @@ export default function SynastryCalculator({ data }) {
             caption={imageComponent?.props?.caption?.value}
             fit={imageComponent?.props?.fit?.value}
             position={imageComponent?.props?.position?.value}
-            radius={imageComponent?.props?.radius?.value}></Image>
+            radius={imageComponent?.props?.radius?.value}
+          ></Image>
         )}
       </div>
     </div>

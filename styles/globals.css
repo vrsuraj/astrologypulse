@@ -12,13 +12,6 @@
   --body-font-family: 'Lato', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 @layer base{
   h1,h2,h3,h4,h5,h6{
@@ -27,6 +20,9 @@
   h1{
     line-height: 1.1 !important;
   }
+     .customBgSelect {
+       @apply text-lg w-full outline-none text-zinc-800 px-4 py-3 rounded-lg bg-zinc-100;
+     }
          .input2 {
            @apply text-white border-b border-zinc-500 focus:border-white;
          }

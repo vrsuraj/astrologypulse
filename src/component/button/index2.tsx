@@ -1,4 +1,3 @@
-"use client";
 import React, { useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 import { ButtonProps, ButtonTargetEnum } from "./button.type";

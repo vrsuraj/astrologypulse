@@ -4,7 +4,6 @@ import NatalTabCalculator from "./natalCalculator";
 import { useRouter } from "next/router";
 import useForm from "@/context/useFormValue";
 import { BackUrl } from "@/utils/routing";
-import { filterArrayByNestedPropertyValue } from "@/utils/arrayFunc";
 
 export default function Natal({ pageData }: { pageData: any }) {
   const [userData, setUserData] = useState({});
@@ -28,7 +27,7 @@ export default function Natal({ pageData }: { pageData: any }) {
 
   return (
     <div>
-      {responseType !== "tab" ? (
+      {responseType == "tab" ? (
         <NatalTabCalculator
           handleForm={handleForm}
           pageData={pageData}
