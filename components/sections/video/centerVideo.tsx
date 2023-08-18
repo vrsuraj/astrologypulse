@@ -15,7 +15,7 @@ interface centerVideo {
 const getLayoutStyleFunc = (name: string | any) => {
   let object: any = {};
   switch (name) {
-    case "video_style_three":
+    case "video_style_two":
       object["layout"] =
         "md:flex-row flex-col md:gap-20 gap-14 max-w-7xl mx-auto text-left items-center";
       object["align"] = "items-start";

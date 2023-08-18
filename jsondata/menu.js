@@ -1,80 +1,52 @@
 export const dropdownMenu = {
-  style: "right",
-  logo: "/imgs/astropulse.png",
+  config: {
+    style: {
+      type: "right",
+      value: "",
+    },
+  },
+  logo: "https://purple-nebula.vercel.app/imgs/logo.svg",
   menu_links: [
     {
-      title: "Free Personal Horoscope",
-      id: "horoscope_landing",
-    },
-    {
-      title: "astrology",
+      name: "astrology",
+      type: "SUB_MENU",
       sub_menu: [
         {
-          title: "Birth Chart",
-          id: "birth_chart",
+          name: "Dharmik Click karo",
+          type: "LINK",
+          value: "/transit-chart",
         },
       ],
     },
     {
-      title: "tarot",
+      name: "reports",
+      type: "SUB_MENU",
+      value: "https://www.youtube.com",
       sub_menu: [
         {
-          title: "Tarot Prediction",
-          id: "tarot_prediction",
+          name: "Dharmik Page",
+          type: "LINK",
+          value: "/dharmik-page",
         },
         {
-          title: "Yes No Tarot",
-          id: "yes_no_tarot",
-        },
-        {
-          title: "9 Spread Tarot",
-          id: "9_spread_tarot",
+          name: "new page",
+          type: "LINK",
+          value: "new-test-page",
         },
       ],
     },
-    {
-      title: "compatibility",
-      sub_menu: [
-        { title: "zodiac compatibility", id: "compatibiliy" },
-        { title: "synastry chart", id: "synastry" },
-      ],
-    },
-
-    // {
-    //   title: "horoscope",
-    //   id: "horoscope",
-    //   sub_menu: [
-    //     { title: "Daily Horoscope", id: "horoscope" },
-
-    //     { title: "Monthly Horoscope", id: "monthly_horoscope" },
-    //   ],
-    // },
 
     {
-      title: "numerology",
-      id: "number",
-      sub_menu: [
-        { title: "Numerology Calculator", id: "number" },
-
-        { title: "Life Path Number", id: "num_lifepath" },
-        {
-          title: "Personality Number",
-          id: "num_personality",
-        },
-        {
-          title: "Expression Number",
-          id: "num_expression",
-        },
-      ],
-    },
-    {
-      title: "blog",
-      id: "blog",
+      name: "blog",
+      value: "/blog",
+      type: "LINK",
     },
   ],
   social_links: [
-    { id: "facebook", link: "/" },
-    { id: "youtube", link: "/" },
-    { id: "twitter", link: "/" },
+    {
+      name: "facebook",
+      link: "/",
+    },
   ],
+  authentication_links: true,
 };

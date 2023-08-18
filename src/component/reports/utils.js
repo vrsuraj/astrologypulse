@@ -1041,16 +1041,15 @@ export const TransitData = (props) => {
     >
       <Sign
         size="text-[27px] md:text-[33px] md:mt-[3px] mt-[-3px]"
-        color={` ${typeTextColor[props.data.aspect_type]} text-secondary`}
+        color={`${typeTextColor[props.data.aspect_type]}`}
         name={props.data.aspect_type}
       />
       <span className="leading-8">
-        Transit {props.data.transit_planet} {props.data.aspect_type} Natal{" "}
+        Transit {props.data.transit_planet} {props.data.aspect_type} Natal
         {props.data.natal_planet} start{" "}
         <b
-          className={`${typebgColor[props.data.aspect_type]} mx-1 font-normal ${
-            typeTextColor[props.data.aspect_type]
-          } text-center  border-current`}
+          style={{ color: typeTextColor[props.data.aspect_type] }}
+          className={` mx-1 font-normal  text-center  border-current border-b pb-1`}
         >
           {TimeForTransit(props.data.exact_time)[0]
             ? TimeForTransit(props.data.exact_time)[0]
@@ -1058,9 +1057,8 @@ export const TransitData = (props) => {
         </b>{" "}
         at{" "}
         <b
-          className={`${typebgColor[props.data.aspect_type]} ${
-            typeTextColor[props.data.aspect_type]
-          } text-center  mx-1 font-normal`}
+          style={{ color: typeTextColor[props.data.aspect_type] }}
+          className={` text-center  mx-1 font-normal border-b border-current pb-1`}
         >
           {TimeForTransit(props.data.exact_time)[1]
             ? TimeForTransit(props.data.exact_time)[1]
