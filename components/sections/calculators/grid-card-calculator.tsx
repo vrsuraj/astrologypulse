@@ -41,21 +41,24 @@ export default function GridCardCalculator({ data, extra }: Props) {
   return (
     <div
       style={styles}
-      className={`md:py-20 py-14 px-5 flex flex-col gap-14 w-full ${extra}`}>
-      <div className='flex flex-col gap-5 w-full text-center max-w-4xl mx-auto items-center'>
+      className={`md:py-20 py-14 px-5 flex flex-col gap-14 w-full ${extra}`}
+    >
+      <div className="flex flex-col gap-5 w-full text-center max-w-4xl mx-auto items-center">
         {allowedComponents.includes("HEADLINE") && headlineComponent && (
           <Text
             size={headlineComponent?.props?.size?.value || "5xl"}
             variant={headlineComponent?.props?.variant?.value || "h2"}
             weight={headlineComponent?.props?.weight?.value || "bold"}
-            color={headlineComponent?.props?.color?.value}>
+            color={headlineComponent?.props?.color?.value}
+          >
             {headlineComponent?.props.content.value}
           </Text>
         )}
         {allowedComponents.includes("CONTENT") && paragraphComponent && (
           <Paragraph
-            extra='max-w-3xl mx-auto'
-            size={paragraphComponent?.props?.size?.value || "lg"}>
+            extra="max-w-3xl mx-auto"
+            size={paragraphComponent?.props?.size?.value || "lg"}
+          >
             {paragraphComponent?.props?.content?.value}
           </Paragraph>
         )}
@@ -64,7 +67,8 @@ export default function GridCardCalculator({ data, extra }: Props) {
       <div
         className={`w-full ${getGridLayoutstyle(
           cardComponent?.props?.items?.card_length || 4
-        )} mx-auto grid place-items-center gap-7`}>
+        )} mx-auto grid place-items-center gap-7`}
+      >
         {cardComponent?.props?.items?.value.map((item: any, i: number) => (
           <RenderCardByType
             number={i}
@@ -127,7 +131,7 @@ export function RenderCardByType({
     default:
       return (
         <Card
-          extra='h-full'
+          extra="h-full"
           align={data?.props?.align?.value || "center"}
           button={{
             display: data?.props?.button_display?.value || false,

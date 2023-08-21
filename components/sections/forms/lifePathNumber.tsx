@@ -1,4 +1,3 @@
-"use client";
 
 import Paragraph from "../../../src/component/paragraph";
 import Text from "../../../src/component/text";

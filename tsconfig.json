@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/component/tarot/9SpreadResponse.jsx", "src/component/horoscope/index.jsx", "src/component/forms/stylishBorderNatalForm.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/component/tarot/9SpreadResponse.jsx", "src/component/horoscope/index.jsx", "src/component/forms/stylishBorderNatalForm.jsx", "pages/confirm-payment.jsx", "components/sectionList/index.tsx", "components/navigation/mobileNavigation/mobileNav1.jsx"],
   "exclude": ["node_modules"]
 }

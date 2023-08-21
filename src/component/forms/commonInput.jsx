@@ -15,7 +15,6 @@ export default function CommonForm(props) {
     solar_year: date.getFullYear(),
   });
   const [formValues, setFormValues] = useState(props.initialvalue);
-
   useEffect(() => {
     const obj = {
       place: "",
@@ -144,7 +143,6 @@ export default function CommonForm(props) {
           {/* {props.label && (
             <label className={`text-left`}>{props.formKeys.name}</label>
           )} */}
-
           <div className="">
             <input
               className={`${getInputStyle(props?.type, props?.style)} `}
