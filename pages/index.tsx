@@ -10,7 +10,7 @@ type Props = {
 export default function Home({ pageSection }: Props) {
   return (
     <div>
-      {pageSection?.sections?.map((item: any, i: number) => (
+      {pageSection?.map((item: any, i: number) => (
         <SectionList data={item} key={i} />
       ))}
     </div>
@@ -5696,9 +5696,10 @@ export async function getStaticProps() {
   };
 
   const data = await getAndUpdateOrderDetail();
+
   return {
     props: {
-      pageSection: data?.success ? data?.response?.page_skeleton : {},
+      pageSection: data?.success ? data?.response?.page_skeleton?.sections : {},
     },
   };
 }
